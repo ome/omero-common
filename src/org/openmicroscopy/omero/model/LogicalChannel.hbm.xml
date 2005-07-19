@@ -12,8 +12,8 @@
 -->
 
 <class 
-    name="org.openmicroscopy.omero.model.ImagePixel" 
-    table="image_pixels"
+    name="org.openmicroscopy.omero.model.LogicalChannel" 
+    table="logical_channels"
 >
     <meta attribute="implement-equals" inherit="false">true</meta>
 
@@ -28,78 +28,116 @@
     </id>
 
     <property
-        name="pixelType"
+        name="photometricInterpretation"
         type="java.lang.String"
-        column="pixel_type"
+        column="photometric_interpretation"
         length="-1"
     />
     <property
-        name="sizeY"
-        type="java.lang.Integer"
-        column="size_y"
-        length="4"
-    />
-    <property
-        name="sizeZ"
-        type="java.lang.Integer"
-        column="size_z"
-        length="4"
-    />
-    <property
-        name="fileSha1"
+        name="mode"
         type="java.lang.String"
-        column="file_sha1"
+        column="mode"
         length="-1"
     />
     <property
-        name="sizeT"
-        type="java.lang.Integer"
-        column="size_t"
+        name="auxLightAttenuation"
+        type="java.lang.Float"
+        column="aux_light_attenuation"
         length="4"
     />
     <property
-        name="imageServerId"
-        type="java.lang.Long"
-        column="image_server_id"
-        length="8"
-    />
-    <property
-        name="sizeX"
+        name="exWave"
         type="java.lang.Integer"
-        column="size_x"
+        column="ex_wave"
         length="4"
     />
     <property
-        name="sizeC"
+        name="detectorOffset"
+        type="java.lang.Float"
+        column="detector_offset"
+        length="4"
+    />
+    <property
+        name="auxTechnique"
+        type="java.lang.String"
+        column="aux_technique"
+        length="-1"
+    />
+    <property
+        name="fluor"
+        type="java.lang.String"
+        column="fluor"
+        length="-1"
+    />
+    <property
+        name="contrastMethod"
+        type="java.lang.String"
+        column="contrast_method"
+        length="-1"
+    />
+    <property
+        name="detectorGain"
+        type="java.lang.Float"
+        column="detector_gain"
+        length="4"
+    />
+    <property
+        name="name"
+        type="java.lang.String"
+        column="name"
+        length="-1"
+    />
+    <property
+        name="samplesPerPixel"
         type="java.lang.Integer"
-        column="size_c"
+        column="samples_per_pixel"
+        length="4"
+    />
+    <property
+        name="lightAttenuation"
+        type="java.lang.Float"
+        column="light_attenuation"
+        length="4"
+    />
+    <property
+        name="emWave"
+        type="java.lang.Integer"
+        column="em_wave"
+        length="4"
+    />
+    <property
+        name="auxLightWavelength"
+        type="java.lang.Integer"
+        column="aux_light_wavelength"
+        length="4"
+    />
+    <property
+        name="illuminationType"
+        type="java.lang.String"
+        column="illumination_type"
+        length="-1"
+    />
+    <property
+        name="ndFilter"
+        type="java.lang.Float"
+        column="nd_filter"
+        length="4"
+    />
+    <property
+        name="pinholeSize"
+        type="java.lang.Integer"
+        column="pinhole_size"
+        length="4"
+    />
+    <property
+        name="lightWavelength"
+        type="java.lang.Integer"
+        column="light_wavelength"
         length="4"
     />
 
     <!-- Associations -->
   
-    <!-- bi-directional many-to-one association to Repository -->
-    <many-to-one
-        name="repository"
-        class="org.openmicroscopy.omero.model.Repository"
-        not-null="true"
-    >
-        <column name="repository" />
-    </many-to-one>
-    <!-- bi-directional one-to-many association to Image -->
-    <set
-        name="images"
-        lazy="true"
-        inverse="true"
-		cascade="all"
-    >
-        <key>
-            <column name="pixels_id" />
-        </key>
-        <one-to-many 
-            class="org.openmicroscopy.omero.model.Image"
-        />
-    </set>
     <!-- bi-directional one-to-many association to ChannelComponent -->
     <set
         name="channelComponents"
@@ -108,7 +146,7 @@
 		cascade="all"
     >
         <key>
-            <column name="pixels_id" />
+            <column name="logical_channel" />
         </key>
         <one-to-many 
             class="org.openmicroscopy.omero.model.ChannelComponent"

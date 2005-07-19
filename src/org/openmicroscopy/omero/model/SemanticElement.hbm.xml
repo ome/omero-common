@@ -12,18 +12,18 @@
 -->
 
 <class 
-    name="org.openmicroscopy.omero.model.CategoryGroup" 
-    table="category_groups"
+    name="org.openmicroscopy.omero.model.SemanticElement" 
+    table="semantic_elements"
 >
     <meta attribute="implement-equals" inherit="false">true</meta>
 
     <id
-        name="attributeId"
+        name="semanticElementId"
         type="java.lang.Integer"
-        column="attribute_id"
+        column="semantic_element_id"
     >
         <generator class="sequence">
-            <param name="sequence">attribute_seq</param>
+            <param name="sequence">semantic_element_seq</param>
         </generator>
     </id>
 
@@ -31,7 +31,8 @@
         name="name"
         type="java.lang.String"
         column="name"
-        length="-1"
+        not-null="true"
+        length="64"
     />
     <property
         name="description"
@@ -42,27 +43,13 @@
 
     <!-- Associations -->
   
-    <!-- bi-directional one-to-many association to Category -->
-    <set
-        name="categories"
-        lazy="true"
-        inverse="true"
-		cascade="all"
-    >
-        <key>
-            <column name="category_group" />
-        </key>
-        <one-to-many 
-            class="org.openmicroscopy.omero.model.Category"
-        />
-    </set>
-    <!-- bi-directional many-to-one association to ModuleExecution -->
+    <!-- bi-directional many-to-one association to SemanticType -->
     <many-to-one
-        name="moduleExecution"
-        class="org.openmicroscopy.omero.model.ModuleExecution"
+        name="semanticType"
+        class="org.openmicroscopy.omero.model.SemanticType"
         not-null="true"
     >
-        <column name="module_execution_id" />
+        <column name="semantic_type_id" />
     </many-to-one>
 
 </class>
