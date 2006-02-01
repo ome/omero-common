@@ -1,5 +1,5 @@
 /*
- * ome.api.Pixels
+ * ome.api.IPixels
  *
  *------------------------------------------------------------------------------
  *
@@ -52,18 +52,18 @@ import ome.model.display.RenderingDef;
  * </small>
  * @since OME2.2
  */
-public interface Pixels
+public interface IPixels
 {
 
     /**
-     * Retrieves the Pixels Description i.e. the dimensions of the pixels set
+     * Retrieves the IPixels Description i.e. the dimensions of the pixels set
      * in microns, the omeis id and the image id.
      * Other information will retrieve from omeis.
      * @return See below.
      * @throws PixServiceException If the connection is broken, or logged in
      *          or if an error occured while trying to. 
      */
-    public ome.model.core.Pixels retrievePixDescription(int pixId);
+    public ome.model.core.Pixels retrievePixDescription(long pixId);
     
     /**
      * Retrieves the rendering settings.
@@ -71,7 +71,7 @@ public interface Pixels
      * @throws PixServiceException If the connection is broken, or logged in
      *          or if an error occured while trying to. 
      */
-    public RenderingDef retrieveRndSettings(int pixId);
+    public RenderingDef retrieveRndSettings(long pixId);
     
     /**
      * Saves the specified rendering settings.
@@ -79,6 +79,6 @@ public interface Pixels
      * @throws PixServiceException If the connection is broken, or logged in
      *          or if an error occured while trying to. 
      */
-    public void saveRndSettings(int pixId, RenderingDef rndSettings);
+    public void saveRndSettings(RenderingDef rndSettings);
     
 }

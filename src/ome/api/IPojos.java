@@ -1,5 +1,5 @@
 /*
- * ome.api.Pojos
+ * ome.api.IPojos
  *
  *------------------------------------------------------------------------------
  *
@@ -38,7 +38,7 @@ import java.util.Set;
 // Application-internal dependencies
 
 /**
- * Provides methods for dealing with the core "Pojos" of OME. Included are:
+ * Provides methods for dealing with the core "IPojos" of OME. Included are:
  * Projects, Datasets, Images, CategoryGroups, Categories, Classifications,
  * ImageAnnotations, and DatasetAnnotations.
  * 
@@ -88,7 +88,7 @@ import java.util.Set;
  * @DEV.TODO add throws statements where necessary (IllegalArgument, ...)
  *
  */
-public interface Pojos {
+public interface IPojos {
 
 	/**
 	 * Retrieves hierarchy trees rooted by a given node.

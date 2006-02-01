@@ -1,5 +1,5 @@
 /*
- * ome.api.ModelBased
+ * ome.api.IQuery
  *
  *------------------------------------------------------------------------------
  *
@@ -30,23 +30,39 @@
 package ome.api;
 
 //Java imports
+import java.util.List;
+import java.util.Map;
 
 //Third-party libraries
 
 //Application-internal dependencies
-import ome.model.IObject;
-import ome.util.ModelMapper;
+
 
 /** 
+ * Provides methods for directly querying object graphs. 
+ * 
  * @author  Josh Moore &nbsp;&nbsp;&nbsp;&nbsp;
  * 				<a href="mailto:josh.moore@gmx.de">josh.moore@gmx.de</a>
- * @version 1.0 
+ * @version 3.0 
  * <small>
  * (<b>Internal version:</b> $Rev$ $Date$)
  * </small>
- * @since 1.0
+ * @since 3.0
  */
-public interface ModelBased  {
-	public void copy(IObject model, ModelMapper mapper);
-	// TODO public IObject fill(IObject model, ModelMapper mapper);
+public interface IQuery {
+    
+	public Object getUniqueByExample(Object example);
+	public List getListByExample(Object example);
+	public Object getUniqueByFieldILike(Class klazz, String field, String value);
+	public List getListByFieldILike(Class klazz, String field, String value);
+	public Object getUniqueByFieldEq(Class klazz, String field, Object value);
+	public List getListByFieldEq(Class klazz, String field, Object value);
+	public Object getById(Class klazz, long id);
+	public void persist(Object[] objects);
+	public Object getUniqueByMap(Class klazz, Map constraints);
+	public List getListByMap(Class klazz, Map constraints);
+	public Object queryUnique(String query, Object[] params);
+	public List queryList(String query, Object[] params);
+	public Object queryUniqueMap(String query, Map params);
+	public List queryListMap(String query, Map params);
 }

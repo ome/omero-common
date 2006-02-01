@@ -1,5 +1,5 @@
 /*
- * ome.api.PrimitiveHierarchyBrowsing
+ * ome.api.IUpdate
  *
  *------------------------------------------------------------------------------
  *
@@ -29,39 +29,36 @@
 
 package ome.api;
 
-
-//Java imports
+// Java imports
+import java.util.Collection;
 import java.util.Map;
-import java.util.Set;
 
-//Third-party libraries
+import ome.model.IObject;
 
-//Application-internal dependencies
+// Third-party libraries
 
-/** 
- * Provides methods to support browsing of Image hierarchies <b>using only primitive types as inputs</b>.
- * Otherwise as in {@link ome.api.HierarchyBrowsing}
- *
- * @author  <br>Josh Moore &nbsp;&nbsp;&nbsp;&nbsp;
- * 				<a href="mailto:josh.moore@gmx.de">
- * 					josh.moore@gmx.de</a>
- * @version 2.2
- * <small>
- * (<b>Internal version:</b> $Revision: $ $Date: $)
- * </small>
+// Application-internal dependencies
+
+/**
+ * Provides methods for directly updating object graphs. 
+ * 
+ * @author <br>
+ *         Josh Moore &nbsp;&nbsp;&nbsp;&nbsp; <a
+ *         href="mailto:josh.moore@gmx.de"> josh.moore@gmx.de</a>
+ * @version 1.0 <small> (<b>Internal version:</b> $Revision: $ $Date: $)
+ *          </small>
+ * @since OMERO3.0
  */
-public interface PrimitiveHierarchyBrowsing
-{
+public interface IUpdate {
 
-    /**
-     * As in {@link HierarchyBrowsing#loadPDIHierarchy(Class, int)} but using only primitive types.
-     * @param rootNodeType  The type of the root node.  Can either be
-     * 						a string representing
-     *                      {@link Project} or {@link Dataset}.
-     * @param rootNodeID    The id of the root node.
-     * @return The requested node as root and all of its descendants.  The type
-     *         of the returned value will be <code>rootNodeType</code>. 
-     */
-    public OMEModel loadPDIHierarchy(String rootNodeType, int rootNodeID);
-    
+    void saveCollection(Collection graph);
+    void saveObject(IObject graph);
+    void saveMap(Map graph);
+    void saveArray(IObject[] graph);
+ 
+    Collection  saveAndReturnCollection(Collection graph);
+    Map         saveAndReturnMap(Map map);
+    IObject     saveAndReturnObject(IObject graph);
+    IObject[]   saveAndReturnArray(IObject[] graph);
+
 }

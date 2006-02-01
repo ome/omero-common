@@ -1,5 +1,5 @@
 /*
- * ome.api.Results
+ * ome.api.IResults
  *
  *------------------------------------------------------------------------------
  *
@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import ome.model.IObject;
+
 // Third-party libraries
 
 // Application-internal dependencies
@@ -62,11 +64,11 @@ import java.util.Set;
  * @since OMERO3.0
  *
  */
-public interface Results {
+public interface IResults {
 	
 	/* Definiftions to make this compile */
 	static class PixelSet {} // also known as RoiSets
-	static interface Result extends OMEModel {} // marker for results
+	static interface Result extends IObject {} // marker for results
 	
 	 /** server-side parsing of data maps
 	  * 
@@ -122,7 +124,7 @@ public interface Results {
 	 Set[] retrieveResultsBulk(int[] pixelSetIds, List[] keys);
 	 Map[] retrieveResultsBulkPrimitive(int[] pixelSetIds, String[][] keys);
 	 
-	 /** querying for Results 
+	 /** querying for IResults 
 	  * 
 	  * @param resultType determines the table to be queried; 
 	  * 	could be the interface <code>Result</code> but then careful with orderBy

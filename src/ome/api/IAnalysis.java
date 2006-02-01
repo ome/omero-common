@@ -1,5 +1,5 @@
 /*
- * ome.api.Analysis
+ * ome.api.IAnalysis
  *
  *------------------------------------------------------------------------------
  *
@@ -30,7 +30,6 @@
 package ome.api;
 
 // Java imports
-import java.util.Map;
 import java.util.Set;
 
 // Third-party libraries
@@ -40,8 +39,6 @@ import java.util.Set;
 /**
  * Provides access to the model objects involved in analysis.
  * 
- * @author Jean-Marie Burel &nbsp;&nbsp;&nbsp;&nbsp; <a
- *         href="mailto:j.burel@dundee.ac.uk">j.burel@dundee.ac.uk</a>
  * @author <br>
  *         Josh Moore &nbsp;&nbsp;&nbsp;&nbsp; <a
  *         href="mailto:josh.moore@gmx.de"> josh.moore@gmx.de</a>
@@ -49,16 +46,16 @@ import java.util.Set;
  *          </small>
  * @since OME1.0
  */
-public interface Analysis {
+public interface IAnalysis {
 
 	// TODO plural arguments for each
-	public Set getProjectsForUser(int experimenterId); // TODO or map?
-	public Set getDatasetsForProject(int projectId);
+	public Set getProjectsForUser(long experimenterId); // TODO or map?
+	public Set getDatasetsForProject(long projectId);
 	public Set getAllDatasets();
-	public Set getProjectsForDataset(int datasetId);
-	public Set getImagesForDataset(int datasetId );
-	public Set getAllForImage(int imageId);
-	public Set getChainExecutionsForDataset(int datasetId);
+	public Set getProjectsForDataset(long datasetId);
+	public Set getImagesForDataset(long datasetId );
+	public Set getAllForImage(long imageId);
+	// TODO public Set getChainExecutionsForDataset(long datasetId);
 	
 
 //    1) all of the projects for a user,
