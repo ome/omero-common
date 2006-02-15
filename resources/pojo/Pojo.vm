@@ -16,8 +16,25 @@ $templates.PojoTypeDeclaration
 
 $templates.PojoFields
 
-$templates.PojoConstructors
-   
+###########################################################
+## <CustomCode>
+###########################################################
+##$templates.PojoConstructors
+    // Constructors
+
+    /** default constructor */
+    public $pojo.getDeclarationName()() {}
+#if($clazz.identifierProperty)
+    public $pojo.getDeclarationName()(Long id){
+		setId(id);
+		setDetails(new ome.model.internal.Details());
+	}
+#end
+
+###########################################################
+## </CustomCode>
+###########################################################
+
 $templates.PojoPropertyAccessors   
 
 $templates.PojoToString
@@ -70,7 +87,11 @@ $templates.PojoExtraClassCode
 ##	  $set(($type) filter.filter((Object) _$field));
 ##end ## if 
 #end ## foreach
-  	 return true;
+#if($pojo.isSubclass())
+  	 return super.acceptFilter(filter);
+#else
+	 return true;
+#end
   }
 
 #if($clazz.identifierProperty)
@@ -96,12 +117,17 @@ $templates.PojoExtraClassCode
 #foreach($property in $pojo.allPropertiesIterator)
 #set( $field = $property.name )
 	   FIELDS.add(${field.toUpperCase()});
+#if($pojo.isSubclass())
+	   FIELDS.addAll(${pojo.extends}.FIELDS);
+#end	   
 #end ## foreach
 	}
 	
 	
 	// Dynamic Getter/Setter
+#if(!$pojo.isSubclass())
 	protected Map _dynamicFields;
+#end
 	public Object retrieve(String field)
 	{
 		if (field == null)
@@ -116,11 +142,15 @@ $templates.PojoExtraClassCode
 			return $get;
 #end ## forech
 		} else {
+#if($pojo.isSubclass())
+	        return super.retrieve(field);
+#else
 			if (_dynamicFields != null)
 			{
 				return _dynamicFields.get(field);
 			}
 			return null;
+#end			
 		}
 	}
 	
@@ -140,13 +170,41 @@ $templates.PojoExtraClassCode
 			${set}(($type)value);
 #end ## foreach			
 		} else {
+#if($pojo.isSubclass())
+		    super.putAt(field,value);
+#else			
 			if (_dynamicFields == null)
 				_dynamicFields = new HashMap();
 			
 			_dynamicFields.put(field,value);
+#end			
 		}
 	}
 
+#if(!$pojo.isSubclass())
+	protected boolean _loaded = true;
+#end
+	public boolean isLoaded()
+	{
+		return _loaded;
+	}
+	
+	public void unload()
+	{
+#foreach($property in $pojo.allPropertiesIterator)
+#if(!$clazz.identifierProperty.equals($property))	
+#set( $set = "set$pojo.getPropertyName($property)" )
+		${set}(null);
+#end ## if ! id
+#end ## foreach			
+#if($pojo.isSubclass())
+		super.unload();
+#else			
+		_loaded = false;
+
+#end ## if subclass
+	}
+	
 ##parse( "$clazz.vm" ) TODO
 ##parse( "pojo/test.vm" )
 ##$templates.get("pojo/test.vm")
