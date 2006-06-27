@@ -1,9 +1,9 @@
 /*
- * ome.api.ITypes
+ * ome.annotations.Validate
  *
  *------------------------------------------------------------------------------
  *
- *  Copyright (C) 2004 Open Microscopy Environment
+ *  Copyright (C) 2005 Open Microscopy Environment
  *      Massachusetts Institute of Technology,
  *      National Institutes of Health,
  *      University of Dundee
@@ -26,40 +26,33 @@
  *
  *------------------------------------------------------------------------------
  */
+package ome.annotations;
 
-package ome.api;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 //Java imports
 
 //Third-party libraries
 
 //Application-internal dependencies
-import ome.model.IObject;
-import ome.model.internal.Permissions;
+
 
 /** 
- * Access to reflective type information. Also provides simplified access to 
- * special types like enumerations. 
- *
+ * annotation used for determining the types of a Set 
  * @author  Josh Moore &nbsp;&nbsp;&nbsp;&nbsp;
  * 				<a href="mailto:josh.moore@gmx.de">josh.moore@gmx.de</a>
- * @version 3.0
+ * @version 1.0 
  * <small>
- * (<b>Internal version:</b> $$)
+ * (<b>Internal version:</b> $Rev$ $Date$)
  * </small>
- * @since OMERO3
+ * @since 1.0
  */
-
-public interface ITypes
-{
-    
-    <T extends IObject> Class<T>[] getResultTypes ( ); 
-    <T extends IObject> Class<T>[] getAnnotationTypes ( );
-    <T extends IObject> Class<T>[] getContainerTypes ( );
-    <T extends IObject> Class<T>[] getPojoTypes ( );
-    <T extends IObject> Class<T>[] getImportTypes ( );
-    <T extends IObject> T[] allEnumerations( Class<T> k);
-    <T extends IObject> T getEnumeration( Class<T> k, String string ); 
-    <T extends IObject> Permissions permissions( Class<T> k );
-    
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.PARAMETER)
+public @interface Validate{
+    Class[] value();
 }
+
