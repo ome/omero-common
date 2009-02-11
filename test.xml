@@ -11,5 +11,6 @@
   </publications>
   <dependencies defaultconfmapping="test->*">
     <dependency name="common" rev="${omero.version}" changing="true"/>
+    <dependency name="dsl-test" rev="${omero.version}" changing="true"/>
   </dependencies>
 </ivy-module>
