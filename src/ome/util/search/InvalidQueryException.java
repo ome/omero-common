@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2014 Glencoe Software, Inc. All rights reserved.
+ * Copyright (C) 2014 University of Dundee & Open Microscopy Environment.
+ * All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,18 +17,32 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-package ome.system.metrics;
-
+package ome.util.search;
 
 /**
- * Thin-interface around {@link com.codahale.metrics.Metrics}.
+ * Exception to indicate that the query string was invalid
+ * 
+ * @author Dominik Lindner &nbsp;&nbsp;&nbsp;&nbsp; <a
+ *         href="mailto:d.lindner@dundee.ac.uk">d.lindner@dundee.ac.uk</a>
+ * 
+ * @since 5.0
  */
-public interface Metrics {
+public class InvalidQueryException extends Exception {
 
-    Counter counter(Object obj, String name);
+    public InvalidQueryException() {
+        super();
+    }
 
-    Timer timer(Object obj, String name);
+    public InvalidQueryException(String arg0, Throwable arg1) {
+        super(arg0, arg1);
+    }
 
-    Histogram histogram(Object obj, String name);
+    public InvalidQueryException(String arg0) {
+        super(arg0);
+    }
+
+    public InvalidQueryException(Throwable arg0) {
+        super(arg0);
+    }
 
 }
