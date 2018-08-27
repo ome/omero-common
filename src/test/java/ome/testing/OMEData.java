@@ -59,7 +59,7 @@ public class OMEData {
 
     Random rnd;
 
-    String[] files = new String[] { "test_data.properties" };
+    String[] files = new String[] {"test_data.properties"};
 
     public void setDataSource(DataSource dataSource) {
         this.ds = dataSource;
