@@ -8,7 +8,6 @@
 package ome.api;
 
 import ome.model.meta.Event;
-import ome.system.EventContext;
 
 /**
  * OMERO API Interface with stateful semantics.
@@ -48,8 +47,8 @@ public interface StatefulServiceInterface extends ServiceInterface {
     void close();
 
     /**
-     * Returns the current {@link EventContext} for this instance. This is
+     * Returns the current {@link IEventContext} for this instance. This is
      * useful for later identifying changes made by this {@link Event}.
      */
-    EventContext getCurrentEventContext();
+    IEventContext getCurrentEventContext();
 }

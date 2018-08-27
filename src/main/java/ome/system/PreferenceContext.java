@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
+import ome.api.IEventContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.FatalBeanException;
@@ -156,7 +157,7 @@ public class PreferenceContext extends PropertyPlaceholderConfigurer {
         return preference.isDb();
     }
 
-    public boolean canRead(EventContext ec, String key) {
+    public boolean canRead(IEventContext ec, String key) {
         Preference preference = getPreferenceOrDefault(key);
 
         switch (preference.getVisibility()) {

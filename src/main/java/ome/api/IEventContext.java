@@ -3,7 +3,7 @@
  *   Use is subject to license terms supplied in LICENSE.txt
  */
 
-package ome.system;
+package ome.api;
 
 import java.util.List;
 import java.util.Set;
@@ -21,7 +21,7 @@ import ome.model.internal.Permissions;
  * @see ome.model.meta.ExperimenterGroup
  * @since 3.0
  */
-public interface EventContext {
+public interface IEventContext {
 
     Long getCurrentShareId();
 

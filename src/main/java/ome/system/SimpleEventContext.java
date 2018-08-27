@@ -10,17 +10,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import ome.api.IEventContext;
 import ome.model.enums.AdminPrivilege;
 import ome.model.internal.Permissions;
 
 /**
- * simple, non-thread-safe, serializable {@link ome.system.EventContext}
+ * simple, non-thread-safe, serializable {@link IEventContext}
  * 
  * @author Josh Moore, josh.moore at gmx.de
- * @see EventContext
+ * @see IEventContext
  * @since 3.0
  */
-public class SimpleEventContext implements EventContext, Serializable {
+public class SimpleEventContext implements IEventContext, Serializable {
 
     private static final long serialVersionUID = -391820349350359539L;
 
@@ -65,7 +66,7 @@ public class SimpleEventContext implements EventContext, Serializable {
     }
 
     /** copy constructor. Makes defensive copies where necessary */
-    public SimpleEventContext(EventContext ec) {
+    public SimpleEventContext(IEventContext ec) {
         if (ec == null) {
             throw new IllegalArgumentException("Argument cannot be null.");
         }
@@ -79,7 +80,7 @@ public class SimpleEventContext implements EventContext, Serializable {
      * exception, those fields will remain null assuming that the
      * {@code ome.security.SecuritySystem} will reload them later.
      */
-    protected void copy(EventContext ec) {
+    protected void copy(IEventContext ec) {
         this.shareId = ec.getCurrentShareId();
         this.csId = ec.getCurrentSessionId();
         this.cgId = ec.getCurrentGroupId();
