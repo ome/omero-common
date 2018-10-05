@@ -7,6 +7,7 @@ package ome.system;
 
 import java.io.Serializable;
 
+import ome.api.IPrincipal;
 import ome.model.enums.EventType;
 import ome.model.internal.Permissions;
 import ome.model.meta.ExperimenterGroup;
@@ -23,7 +24,7 @@ import ome.model.meta.ExperimenterGroup;
  * @see Permissions
  * @since 3.0
  */
-public class Principal implements java.security.Principal, Serializable {
+public class Principal implements IPrincipal, Serializable {
 
     private static final long serialVersionUID = 3761954018296933086L;
 
