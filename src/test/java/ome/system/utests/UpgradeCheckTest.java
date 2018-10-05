@@ -24,7 +24,7 @@ public class UpgradeCheckTest extends TestCase {
     ome.system.UpgradeCheck check;
 
     @Test
-    public void testNoActionOnNull() throws Exception {
+    public void testNoActionOnNull() {
         check = new UpgradeCheck(null, version, "test");
         check.run();
         assertFalse(check.isUpgradeNeeded());
@@ -32,7 +32,7 @@ public class UpgradeCheckTest extends TestCase {
     }
 
     @Test
-    public void testNoActionOnEmpty() throws Exception {
+    public void testNoActionOnEmpty() {
         check = new UpgradeCheck("", version, "test");
         check.run();
         assertFalse(check.isUpgradeNeeded());
@@ -41,7 +41,7 @@ public class UpgradeCheckTest extends TestCase {
     }
 
     @Test
-    public void testSlowResponse() throws Exception {
+    public void testSlowResponse() {
         check = new UpgradeCheck("http://127.0.0.1:8000", version, "test");
         check.run();
         assertFalse(check.isUpgradeNeeded());
@@ -50,7 +50,7 @@ public class UpgradeCheckTest extends TestCase {
     }
 
     @Test
-    public void testSlowResponse2() throws Exception {
+    public void testSlowResponse2() {
         check = new UpgradeCheck("http://127.0.0.1:9998", version, "test");
         check.run();
         assertFalse(check.isUpgradeNeeded());
@@ -58,7 +58,7 @@ public class UpgradeCheckTest extends TestCase {
     }
 
     @Test
-    public void testBadIp() throws Exception {
+    public void testBadIp() {
         check = new UpgradeCheck("200.200.200.200", version, "test");
         check.run();
         assertFalse(check.isUpgradeNeeded());
@@ -67,7 +67,7 @@ public class UpgradeCheckTest extends TestCase {
     }
 
     @Test
-    public void testWrongVersion() throws Exception {
+    public void testWrongVersion() {
         check = new UpgradeCheck("200.200.200.200", "XYZ" + version, "test");
         check.run();
         assertFalse(check.isUpgradeNeeded());
@@ -76,7 +76,7 @@ public class UpgradeCheckTest extends TestCase {
     }
 
     @Test(enabled = false)
-    public void testBadUrl1() throws Exception {
+    public void testBadUrl1() {
         check = new UpgradeCheck("http://foo", "XYZ" + version, "test");
         check.run();
         assertFalse(check.isUpgradeNeeded());
@@ -85,7 +85,7 @@ public class UpgradeCheckTest extends TestCase {
     }
 
     @Test
-    public void testBadUrl2() throws Exception {
+    public void testBadUrl2() {
         check = new UpgradeCheck("file://dev/null", "XYZ" + version, "test");
         check.run();
         assertFalse(check.isUpgradeNeeded());
@@ -94,7 +94,7 @@ public class UpgradeCheckTest extends TestCase {
     }
 
     @Test
-    public void testBadUrl3() throws Exception {
+    public void testBadUrl3() {
         check = new UpgradeCheck("abcp", "XYZ" + version, "test");
         check.run();
         assertFalse(check.isUpgradeNeeded());
