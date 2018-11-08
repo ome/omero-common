@@ -60,7 +60,7 @@ public interface ISession extends ServiceInterface {
      *            as idle time. A value less than 1 will cause the default max
      *            timeToLive to be used; but timeToIdle will be disabled.
      */
-    Session createSessionWithTimeout(@NotNull Principal principal,
+    Session createSessionWithTimeout(@NotNull IPrincipal principal,
             long timeToLiveMilliseconds);
 
     /**
@@ -78,7 +78,7 @@ public interface ISession extends ServiceInterface {
      *            being destroyed. Setting the value to 0 will prevent idleness
      *            based destruction.
      */
-    Session createSessionWithTimeouts(@NotNull Principal principal,
+    Session createSessionWithTimeouts(@NotNull IPrincipal principal,
             long timeToLiveMilliseconds, long timeToIdleMilliseconds);
 
     /**
@@ -89,7 +89,7 @@ public interface ISession extends ServiceInterface {
      * @throws SecurityViolation
      *             if the password check fails
      */
-    Session createSession(@NotNull Principal principal,
+    Session createSession(@NotNull IPrincipal principal,
             @Hidden String credentials);
 
     /**

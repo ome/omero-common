@@ -29,6 +29,18 @@ public final class Roles implements IRoles, Serializable {
 
     private static final long serialVersionUID = -2488864989534638213L;
 
+    public static boolean isRootUser(Experimenter user, long rootId) {
+        return user != null && user.getId() != null && user.getId().equals(rootId);
+    }
+
+    public static boolean isUserGroup(ExperimenterGroup group, long userGroupId) {
+        return group != null && group.getId() != null && group.getId().equals(userGroupId);
+    }
+
+    public static boolean isSystemGroup(ExperimenterGroup group, long systemGroupId) {
+        return group != null && group.getId() != null && group.getId().equals(systemGroupId);
+    }
+
     private final long rId;
 
     private final String rName;
@@ -82,6 +94,20 @@ public final class Roles implements IRoles, Serializable {
         this.ggName = guestGroupName;
     }
 
+    // ~ Checks
+    // =========================================================================
+
+    public boolean isRootUser(Experimenter user) {
+        return isRootUser(user, getRootId());
+    }
+
+    public boolean isUserGroup(ExperimenterGroup group) {
+        return isUserGroup(group, getUserGroupId());
+    }
+
+    public boolean isSystemGroup(ExperimenterGroup group) {
+        return isUserGroup(group, getSystemGroupId());
+    }
 
     // ~ Accessors
     // =========================================================================

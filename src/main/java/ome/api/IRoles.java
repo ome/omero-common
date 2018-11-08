@@ -5,21 +5,6 @@ import ome.model.meta.ExperimenterGroup;
 
 public interface IRoles {
 
-    // ~ Checks
-    // =========================================================================
-
-    static boolean isRootUser(Experimenter user, long rootId) {
-        return user != null && user.getId() != null && user.getId().equals(rootId);
-    }
-
-    static boolean isUserGroup(ExperimenterGroup group, long userGroupId) {
-        return group != null && group.getId() != null && group.getId().equals(userGroupId);
-    }
-
-    static boolean isSystemGroup(ExperimenterGroup group, long systemGroupId) {
-        return group != null && group.getId() != null && group.getId().equals(systemGroupId);
-    }
-
     /**
      * @return the id of the root user
      */
@@ -69,4 +54,10 @@ public interface IRoles {
      * @return the {@link ExperimenterGroup#getName()} of the guest group
      */
     String getGuestGroupName();
+
+    boolean isRootUser(Experimenter user);
+
+    boolean isUserGroup(ExperimenterGroup group);
+
+    boolean isSystemGroup(ExperimenterGroup group);
 }
