@@ -11,6 +11,7 @@ import java.io.Serializable;
 
 import com.google.common.base.Predicate;
 
+import ome.api.IRoles;
 import ome.model.meta.Experimenter;
 import ome.model.meta.ExperimenterGroup;
 
@@ -24,30 +25,9 @@ import ome.model.meta.ExperimenterGroup;
  * @see ome.model.meta.ExperimenterGroup
  * @since 3.0-M3
  */
-public final class Roles implements Serializable {
+public final class Roles implements IRoles, Serializable {
 
     private static final long serialVersionUID = -2488864989534638213L;
-
-    public final Predicate<Experimenter> IS_ROOT_USER = new Predicate<Experimenter>() {
-        @Override
-        public boolean apply(Experimenter experimenter) {
-            return isRootUser(experimenter);
-        }
-    };
-
-    public final Predicate<ExperimenterGroup> IS_USER_GROUP = new Predicate<ExperimenterGroup>() {
-        @Override
-        public boolean apply(ExperimenterGroup group) {
-            return isUserGroup(group);
-        }
-    };
-
-    public final Predicate<ExperimenterGroup> IS_SYSTEM_GROUP = new Predicate<ExperimenterGroup>() {
-        @Override
-        public boolean apply(ExperimenterGroup group) {
-            return isSystemGroup(group);
-        }
-    };
 
     private final long rId;
 
@@ -102,23 +82,6 @@ public final class Roles implements Serializable {
         this.ggName = guestGroupName;
     }
 
-    // ~ Checks
-    // =========================================================================
-
-    public boolean isRootUser(Experimenter user) {
-        return user == null || user.getId() == null ? false : user.getId()
-                .equals(getRootId());
-    }
-
-    public boolean isUserGroup(ExperimenterGroup group) {
-        return group == null || group.getId() == null ? false : group.getId()
-                .equals(getUserGroupId());
-    }
-
-    public boolean isSystemGroup(ExperimenterGroup group) {
-        return group == null || group.getId() == null ? false : group.getId()
-                .equals(getSystemGroupId());
-    }
 
     // ~ Accessors
     // =========================================================================
