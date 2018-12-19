@@ -35,34 +35,5 @@ test {
     }
 }
 
-task sourceJar(type: Jar) {
-    from sourceSets.main.allJava
-}
-
-ext {
-    artifactory_user = project.hasProperty('artifactory_user') ? project.getProperty('artifactory_user') : ''
-    artifactory_pass = project.hasProperty('artifactory_pass') ? project.getProperty('artifactory_pass') : ''
-}
-
-publishing {
-    repositories {
-      maven {
-        def releaseRepoUrl = 'https://artifacts.openmicroscopy.org/artifactory/ome.staging/'
-        def snapshotsRepoUrl = 'https://artifacts.openmicroscopy.org/artifactory/ome.snapshots/'
-        url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
-        // Deploy to artifactory with: ./gradlew publish -P artifactory_user=$USER -P artifactory_pass=$PASS
-        credentials {
-          username project.artifactory_user
-          password project.artifactory_pass
-        }
-      }
-    }
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-            artifact sourceJar {
-                classifier "sources"
-            }
-        }
-    }
-}
+// Add publish functionality
+apply from: 'publish.gradle'
