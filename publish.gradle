@@ -10,7 +10,7 @@ task javadocJar(type: Jar) {
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+        commonJava(MavenPublication) {
             from components.java
             artifact sourceJar
             artifact javadocJar
