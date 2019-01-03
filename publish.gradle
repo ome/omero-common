@@ -8,12 +8,18 @@ task javadocJar(type: Jar) {
     from javadoc
 }
 
+task testJar(type: Jar) {
+    classifier "test"
+    from sourceSets.test.output
+}
+
 publishing {
     publications {
         commonJava(MavenPublication) {
             from components.java
             artifact sourceJar
             artifact javadocJar
+            artifact testJar
         }
     }
 }
