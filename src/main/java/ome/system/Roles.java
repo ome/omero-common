@@ -9,9 +9,6 @@ package ome.system;
 
 import java.io.Serializable;
 
-import com.google.common.base.Predicate;
-
-import ome.api.IRoles;
 import ome.model.meta.Experimenter;
 import ome.model.meta.ExperimenterGroup;
 
@@ -25,21 +22,9 @@ import ome.model.meta.ExperimenterGroup;
  * @see ome.model.meta.ExperimenterGroup
  * @since 3.0-M3
  */
-public final class Roles implements IRoles, Serializable {
+public final class Roles implements Serializable {
 
     private static final long serialVersionUID = -2488864989534638213L;
-
-    public static boolean isRootUser(Experimenter user, long rootId) {
-        return user != null && user.getId() != null && user.getId().equals(rootId);
-    }
-
-    public static boolean isUserGroup(ExperimenterGroup group, long userGroupId) {
-        return group != null && group.getId() != null && group.getId().equals(userGroupId);
-    }
-
-    public static boolean isSystemGroup(ExperimenterGroup group, long systemGroupId) {
-        return group != null && group.getId() != null && group.getId().equals(systemGroupId);
-    }
 
     private final long rId;
 
@@ -72,9 +57,9 @@ public final class Roles implements IRoles, Serializable {
         this.sgName = "system";
         this.ugId = nextGroupId++;
         this.ugName = "user";
-        this.guestId = nextUserId++;
+        this.guestId = nextUserId;
         this.guestName = "guest";
-        this.ggId = nextGroupId++;
+        this.ggId = nextGroupId;
         this.ggName = "guest";
     }
 
@@ -98,15 +83,15 @@ public final class Roles implements IRoles, Serializable {
     // =========================================================================
 
     public boolean isRootUser(Experimenter user) {
-        return isRootUser(user, getRootId());
+        return user != null && user.getId() != null && user.getId().equals(getRootId());
     }
 
     public boolean isUserGroup(ExperimenterGroup group) {
-        return isUserGroup(group, getUserGroupId());
+        return group != null && group.getId() != null && group.getId().equals(getUserGroupId());
     }
 
     public boolean isSystemGroup(ExperimenterGroup group) {
-        return isUserGroup(group, getSystemGroupId());
+        return group != null && group.getId() != null && group.getId().equals(getSystemGroupId());
     }
 
     // ~ Accessors

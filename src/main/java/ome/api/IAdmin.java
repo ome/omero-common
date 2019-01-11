@@ -685,7 +685,7 @@ public interface IAdmin extends ServiceInterface {
      * 
      * @return Non-null, immutable {@link Roles} instance.
      */
-    IRoles getSecurityRoles();
+    Roles getSecurityRoles();
 
     /**
      * returns an implementation of {@link EventContext} loaded with the
