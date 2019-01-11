@@ -20,6 +20,7 @@ import ome.model.internal.Permissions;
 import ome.model.meta.Experimenter;
 import ome.model.meta.ExperimenterGroup;
 import ome.model.meta.GroupExperimenterMap;
+import ome.system.EventContext;
 import ome.system.Roles;
 
 /**
@@ -687,11 +688,11 @@ public interface IAdmin extends ServiceInterface {
     IRoles getSecurityRoles();
 
     /**
-     * returns an implementation of {@link IEventContext} loaded with the
+     * returns an implementation of {@link EventContext} loaded with the
      * security for the current user and thread. If called remotely, not all
-     * values of {@link IEventContext} will be sensible.
+     * values of {@link EventContext} will be sensible.
      * 
-     * @return Non-null, immutable {@link IEventContext} instance
+     * @return Non-null, immutable {@link EventContext} instance
      */
-    IEventContext getEventContext();
+    EventContext getEventContext();
 }
