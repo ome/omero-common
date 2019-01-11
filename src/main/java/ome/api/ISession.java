@@ -50,35 +50,31 @@ public interface ISession extends ServiceInterface {
     /**
      * Allows an admin to create a {@link Session} for the give
      * {@link Principal}
-     * 
-     * @param principal
+     *  @param principal
      *            Non-null {@link Principal} with the target user's name
      * @param timeToLiveMilliseconds
      *            The time that this {@link Session} has until destruction. This
      *            is useful to override the server default so that an initial
      *            delay before the user is given the token will not be construed
      *            as idle time. A value less than 1 will cause the default max
-     *            timeToLive to be used; but timeToIdle will be disabled.
      */
-    Session createSessionWithTimeout(@NotNull IPrincipal principal,
+    Session createSessionWithTimeout(@NotNull Principal principal,
             long timeToLiveMilliseconds);
 
     /**
      * Allows an admin to create a {@link Session} for the give
      * {@link Principal}
-     * 
-     * @param principal
+     *  @param principal
      *            Non-null {@link Principal} with the target user's name
      * @param timeToLiveMilliseconds
      *            The time that this {@link Session} has until destruction.
      *            Setting the value to 0 will prevent destruction unless the
      *            session remains idle.
      * @param timeToIdleMilliseconds
-     *            The time that this {@link Session} can remain idle before
-     *            being destroyed. Setting the value to 0 will prevent idleness
-     *            based destruction.
+ *            The time that this {@link Session} can remain idle before
+ *            being destroyed. Setting the value to 0 will prevent idleness
      */
-    Session createSessionWithTimeouts(@NotNull IPrincipal principal,
+    Session createSessionWithTimeouts(@NotNull Principal principal,
             long timeToLiveMilliseconds, long timeToIdleMilliseconds);
 
     /**
@@ -89,7 +85,7 @@ public interface ISession extends ServiceInterface {
      * @throws SecurityViolation
      *             if the password check fails
      */
-    Session createSession(@NotNull IPrincipal principal,
+    Session createSession(@NotNull Principal principal,
             @Hidden String credentials);
 
     /**
