@@ -1,5 +1,7 @@
-// Name for test output jar.
-final TEST_JAR_NAME = "$project.name-test"
+ext {
+    // Name for test output jar.
+    testNameJar = "$project.name-test"
+}
 
 task sourceJar(type: Jar) {
     classifier "sources"
@@ -12,13 +14,11 @@ task javadocJar(type: Jar) {
 }
 
 task testJar(type: Jar) {
-    baseName TEST_JAR_NAME
     from sourceSets.test.output
 }
 
 task testSourceJar(type: Jar) {
     classifier "sources"
-    baseName TEST_JAR_NAME
     from sourceSets.test.output
 }
 
@@ -31,7 +31,7 @@ publishing {
 
         }
         commonTestJava(MavenPublication) {
-            artifactId TEST_JAR_NAME
+            artifactId testNameJar
             artifact testJar
             artifact testSourceJar
         }

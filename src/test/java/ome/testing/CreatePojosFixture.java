@@ -24,7 +24,7 @@ import ome.model.containers.ProjectDatasetLink;
 import ome.model.core.Image;
 import ome.model.meta.Experimenter;
 import ome.model.meta.ExperimenterGroup;
-import ome.api.IEventContext;
+import ome.system.EventContext;
 import ome.system.Login;
 import ome.system.ServiceFactory;
 import ome.util.ShallowCopy;
@@ -76,7 +76,7 @@ public class CreatePojosFixture {
     /** requires an admin service factory in order to create user. */
     public CreatePojosFixture(ServiceFactory factory) {
         setServices(factory);
-        IEventContext ec = iAdmin.getEventContext();
+        EventContext ec = iAdmin.getEventContext();
         e = new Experimenter(ec.getCurrentUserId(), false);
         g = new ExperimenterGroup(ec.getCurrentGroupId(), false);
         TESTER = ec.getCurrentUserName();

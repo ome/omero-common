@@ -7,7 +7,6 @@ package ome.system;
 
 import java.io.Serializable;
 
-import ome.api.IPrincipal;
 import ome.model.enums.EventType;
 import ome.model.internal.Permissions;
 import ome.model.meta.ExperimenterGroup;
@@ -16,7 +15,7 @@ import ome.model.meta.ExperimenterGroup;
  * implementation of {@link java.security.Principal}. Specialized for Omero to
  * carry a {@link ExperimenterGroup group}, an {@link EventType event type} and
  * a {@link Permissions umask}.
- * 
+ *
  * @author Josh Moore, josh.moore at gmx.de
  * @version $Revision$, $Date$
  * @see EventType
@@ -24,7 +23,7 @@ import ome.model.meta.ExperimenterGroup;
  * @see Permissions
  * @since 3.0
  */
-public class Principal implements IPrincipal, Serializable {
+public class Principal implements java.security.Principal, Serializable {
 
     private static final long serialVersionUID = 3761954018296933086L;
 
@@ -39,7 +38,7 @@ public class Principal implements IPrincipal, Serializable {
     /**
      * Creates a Principal with null group and event type. These must be taken
      * from the session.
-     * 
+     *
      * @param name
      */
     public Principal(String name) {
@@ -73,7 +72,7 @@ public class Principal implements IPrincipal, Serializable {
     /**
      * returns only the name of the instance because that is the expected
      * behavior of {@link java.security.Principal} implementations
-     * 
+     *
      * @return value of {@link #name}
      */
     @Override
