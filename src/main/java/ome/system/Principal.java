@@ -23,7 +23,7 @@ import ome.model.meta.ExperimenterGroup;
  * @see Permissions
  * @since 3.0
  */
-public class Principal implements Serializable {
+public class Principal implements java.security.Principal, Serializable {
 
     private static final long serialVersionUID = 3761954018296933086L;
 
