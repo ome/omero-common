@@ -48,18 +48,18 @@ public final class Roles implements Serializable {
 
     /** default constructor which assigns hard-coded values to all roles */
     public Roles() {
-        long nextUserId = 0;
-        long nextGroupId = 0;
+        long nextUserId = -1;
+        long nextGroupId = -1;
         /* these must be defined in the same order as in psql-footer.vm */
-        this.rId = nextUserId++;
+        this.rId = ++nextUserId;
         this.rName = "root";
-        this.sgId = nextGroupId++;
+        this.sgId = ++nextGroupId;
         this.sgName = "system";
-        this.ugId = nextGroupId++;
+        this.ugId = ++nextGroupId;
         this.ugName = "user";
-        this.guestId = nextUserId;
+        this.guestId = ++nextUserId;
         this.guestName = "guest";
-        this.ggId = nextGroupId;
+        this.ggId = ++nextGroupId;
         this.ggName = "guest";
     }
 
