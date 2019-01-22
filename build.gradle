@@ -11,16 +11,13 @@ targetCompatibility = JavaVersion.VERSION_1_8
 repositories {
     mavenLocal()
     mavenCentral()
-    maven {
-        url 'http://artifacts.openmicroscopy.org/artifactory/maven/'
-    }
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile group: 'org.testng', name: 'testng', version: '6.14.2'
-    testCompile group: 'jmock', name: 'jmock', version: '1.+'
-    testCompile group: 'com.jamonapi', name: 'jamon', version: '2.81'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'org.testng', name: 'testng', version: '6.14.2'
+    testImplementation group: 'jmock', name: 'jmock', version: '1.+'
+    testImplementation group: 'com.jamonapi', name: 'jamon', version: '2.81'
 
     api 'org.openmicroscopy:omero-model:5.5.0-SNAPSHOT'
     implementation 'com.codahale.metrics:metrics-graphite:3.0.2'
