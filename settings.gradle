@@ -5,4 +5,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'omero-common'
+rootProject.name = "omero-common"
