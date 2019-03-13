@@ -2,7 +2,8 @@ pluginManagement {
     repositories {
         mavenLocal()
         gradlePluginPortal()
+        maven { url 'https://artifacts.openmicroscopy.org/artifactory/maven/' }
     }
 }
 
-rootProject.name = 'omero-common'
+rootProject.name = "omero-common"
