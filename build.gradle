@@ -35,5 +35,11 @@ test {
     }
 }
 
+jar {
+    manifest {
+        attributes("Main-Class": 'ome.util.tasks.Run')
+    }
+}
+
 // Add publish functionality
 apply from: "publish.gradle"
