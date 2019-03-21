@@ -1,6 +1,4 @@
 /*
- *   $Id$
- *
  *   Copyright 2008 Glencoe Software, Inc. All rights reserved.
  *   Use is subject to license terms supplied in LICENSE.txt
  */
@@ -30,7 +28,7 @@ import org.hibernate.search.ProjectionConstants;
  * 
  * Each instance also has a number of settings which can all be changed from
  * their defaults via accessors, e.g.{@link #setBatchSize(int)} or
- * {@link #setCaseSentivice(boolean)}.
+ * {@link #setCaseSensitive(boolean)}.
  * 
  * The only methods which are required for the proper functioning of a
  * {@link Search} instance are:
@@ -153,8 +151,16 @@ public interface Search extends ome.api.StatefulServiceInterface,
     /**
      * Sets the case sensitivity on all queries where case-sensitivity is
      * supported.
+     * @deprecated use {@link #setCaseSensitive(boolean)}
      */
+    @Deprecated
     void setCaseSentivice(boolean caseSensitive);
+
+    /**
+     * Sets the case sensitivity on all queries where case-sensitivity is
+     * supported.
+     */
+    void setCaseSensitive(boolean caseSensitive);
 
     /**
      * Returns the current case sensitivity setting. If
