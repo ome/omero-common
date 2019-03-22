@@ -62,7 +62,7 @@ public class RGBIntBuffer extends RGBBuffer {
         try {
             dataBuf = new int[Math.multiplyExact(sizeX1, sizeX2)];
         } catch (ArithmeticException ae) {
-            throw new IllegalArgumentException(sizeX1 + "×" + sizeX2 + " plane too large to be allocated");
+            throw new IllegalArgumentException(sizeX1 + "×" + sizeX2 + " plane too large, cannot exceed 2^31 pixels");
         }
     }
 
