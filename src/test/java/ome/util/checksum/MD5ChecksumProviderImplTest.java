@@ -36,9 +36,9 @@ public class MD5ChecksumProviderImplTest
     public void setUp() {
         map.put(ChecksumTestVector.ABC, "900150983cd24fb0d6963f7d28e17f72");
         map.put(ChecksumTestVector.EMPTYARRAY, "d41d8cd98f00b204e9800998ecf8427e");
-        map.put(ChecksumTestVector.SMALLFILE, "37882489fdab971a271368764ebf9c2d");
-        map.put(ChecksumTestVector.MEDIUMFILE, "b16d58a04bc31c8f13311b6c82190b90");
-        map.put(ChecksumTestVector.BIGFILE, "24c462d241a6576c774b0667cc699691");
+        map.put(ChecksumTestVector.SMALLFILE, "afedcd324960f93c20b726c81b8d216a");
+        map.put(ChecksumTestVector.MEDIUMFILE, "5e44e9bc9e91274731b8541e3e1fd687");
+        map.put(ChecksumTestVector.BIGFILE, "e96cd8050b7e09202c395530435f208d");
     }
 
     public MD5ChecksumProviderImplTest() {
