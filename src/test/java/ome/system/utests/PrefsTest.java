@@ -16,6 +16,7 @@ import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.testng.annotations.Test;
+import org.testng.annotations.Ignore;
 
 @Test(groups = "ticket:800")
 public class PrefsTest extends TestCase {
@@ -100,6 +101,7 @@ public class PrefsTest extends TestCase {
         ctx.getProperty("test");
     }
 
+    @Ignore("To re-enable when we sort out version handling")
     @Test
     public void testOmeroVersion() {
         ctx = new PreferenceContext();
