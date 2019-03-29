@@ -93,9 +93,9 @@ public interface ThumbnailStore extends StatefulServiceInterface {
      * @throws ApiUsageException
      *             if:
      *             <ul>
-     *             <li><i>sizeX</i> > pixels.sizeX</li>
+     *             <li><i>sizeX</i> is greater than pixels.sizeX</li>
      *             <li><i>sizeX</i> is negative</li>
-     *             <li><i>sizeY</i> > pixels.sizeY</li>
+     *             <li><i>sizeY</i> is greater than pixels.sizeY</li>
      *             <li><i>sizeY</i> is negative</li>
      *             <li>{@link #setPixelsId(long)} has not yet been called</li>
      *             </ul>
@@ -122,9 +122,9 @@ public interface ThumbnailStore extends StatefulServiceInterface {
     * @throws ApiUsageException
     *             if:
     *             <ul>
-    *             <li><code>sizeX</code> > pixels.sizeX</li>
+    *             <li><code>sizeX</code> is greater than pixels.sizeX</li>
     *             <li><code>sizeX</code> is negative</li>
-    *             <li><code>sizeY</code> > pixels.sizeY</li>
+    *             <li><code>sizeY</code> is greater than pixels.sizeY</li>
     *             <li><code>sizeY</code> is negative</li>
     *             <li>{@link #setPixelsId} has not yet been called</li>
     *             </ul>
@@ -196,7 +196,7 @@ public interface ThumbnailStore extends StatefulServiceInterface {
      * @throws ApiUsageException
      *             if:
      *             <ul>
-     *             <li><i>size</i> > pixels.sizeX and pixels.sizeY</li>
+     *             <li><i>size</i> is greater than pixels.sizeX and pixels.sizeY</li>
      *             <li>{@link #setPixelsId(long)} has not yet been called</li>
      *             </ul>
      * @return a JPEG thumbnail byte buffer.
@@ -218,9 +218,9 @@ public interface ThumbnailStore extends StatefulServiceInterface {
      * @throws ApiUsageException
      *             if:
      *             <ul>
-     *             <li><i>sizeX</i> > pixels.sizeX</li>
+     *             <li><i>sizeX</i> is greater than pixels.sizeX</li>
      *             <li><i>sizeX</i> is negative</li>
-     *             <li><i>sizeY</i> > pixels.sizeY</li>
+     *             <li><i>sizeY</i> is greater than pixels.sizeY</li>
      *             <li><i>sizeY</i> is negative</li>
      *             <li>{@link #setPixelsId(long)} has not yet been called</li>
      *             </ul>
@@ -245,9 +245,9 @@ public interface ThumbnailStore extends StatefulServiceInterface {
      * @throws ApiUsageException
      *             if:
      *             <ul>
-     *             <li><i>sizeX</i> > pixels.sizeX</li>
+     *             <li><i>sizeX</i> is greater than pixels.sizeX</li>
      *             <li><i>sizeX</i> is negative</li>
-     *             <li><i>sizeY</i> > pixels.sizeY</li>
+     *             <li><i>sizeY</i> is greater than pixels.sizeY</li>
      *             <li><i>sizeY</i> is negative</li>
      *             <li><i>theZ</i> is out of range</li>
      *             <li><i>theT</i> is out of range</li>
@@ -272,7 +272,7 @@ public interface ThumbnailStore extends StatefulServiceInterface {
      * @throws ApiUsageException
      *             if:
      *             <ul>
-     *             <li><i>size</i> > pixels.sizeX and pixels.sizeY</li>
+     *             <li><i>size</i> is greater than pixels.sizeX and pixels.sizeY</li>
      *             <li>{@link #setPixelsId(long)} has not yet been called</li>
      *             </ul>
      * @return a JPEG thumbnail byte buffer.
@@ -295,7 +295,7 @@ public interface ThumbnailStore extends StatefulServiceInterface {
      * @throws ApiUsageException
      *             if:
      *             <ul>
-     *             <li><i>size</i> > pixels.sizeX and pixels.sizeY</li>
+     *             <li><i>size</i> is greater than pixels.sizeX and pixels.sizeY</li>
      *             <li>{@link #setPixelsId(long)} has not yet been called</li>
      *             </ul>
      * @return a JPEG thumbnail byte buffer.
@@ -317,9 +317,9 @@ public interface ThumbnailStore extends StatefulServiceInterface {
      * @throws ApiUsageException
      *             if:
      *             <ul>
-     *             <li><i>sizeX</i> > pixels.sizeX</li>
+     *             <li><i>sizeX</i> is greater than pixels.sizeX</li>
      *             <li><i>sizeX</i> is negative</li>
-     *             <li><i>sizeY</i> > pixels.sizeY</li>
+     *             <li><i>sizeY</i> is greater than pixels.sizeY</li>
      *             <li><i>sizeY</i> is negative</li>
      *             <li>{@link #setPixelsId(long)} has not yet been called</li>
      *             </ul>
@@ -344,7 +344,7 @@ public interface ThumbnailStore extends StatefulServiceInterface {
      * @throws ApiUsageException
      *             if:
      *             <ul>
-     *             <li><i>size</i> > pixels.sizeX and pixels.sizeY</li>
+     *             <li><i>size</i> is greater than pixels.sizeX and pixels.sizeY</li>
      *             <li><i>size</i> is negative</li>
      *             </ul>
      * @see #createThumbnail(Integer, Integer)

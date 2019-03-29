@@ -400,8 +400,8 @@ public interface IContainer extends ServiceInterface {
      * <p>
      * To link or unlink objects to the specified object, we should call the
      * methods link or unlink. TODO Or do we use for example
-     * dataset.setProjects(set of projects) to add. Tink has to be set as
-     * follows dataset->project and project->dataset.
+     * dataset.setProjects(set of projects) to add. Link has to be set as
+     * follows dataset to project and project to dataset.
      * 
      * Alternatively, you can make sure that the collection is <b>exactly</b>
      * how it should be in the database. If you can't guarantee this, it's best

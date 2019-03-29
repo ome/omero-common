@@ -65,7 +65,7 @@ public interface IProjection extends ServiceInterface
      *   <li><code>channelIndex</code> is out of range</li>
      *   <li><code>start</code> is out of range</li>
      *   <li><code>end</code> is out of range</li>
-     *   <li><code>start > end</code></li>
+     *   <li><code>start</code> is greater than <code>end</code></li>
      *   <li>the Pixels set qualified by <code>pixelsId</code> is unlocatable.</li>
      * </ul>
      * @see #projectPixels(long, PixelsType, int, int, int, List, int, int, int, String)
@@ -109,11 +109,11 @@ public interface IProjection extends ServiceInterface
      *   <li><code>algorithm</code> is unknown</li>
      *   <li><code>tStart</code> is out of range</li>
      *   <li><code>tEnd</code> is out of range</li>
-     *   <li><code>tStart > tEnd</code></li>
+     *   <li><code>tStart</code> is greater than <code>tEnd</code></li>
      *   <li><code>channels</code> is null or has indexes out of range</li>
      *   <li><code>zStart</code> is out of range</li>
      *   <li><code>zEnd</code> is out of range</li>
-     *   <li><code>zStart > zEnd</code></li>
+     *   <li><code>zStart</code> is greater than <code>zEnd</code></li>
      *   <li>the Pixels set qualified by <code>pixelsId</code> is unlocatable.</li>
      * </ul>
      * @see #projectStack(long, PixelsType, int, int, int, int, int start, int)
