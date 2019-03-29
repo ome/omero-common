@@ -34,8 +34,8 @@ import ome.system.Roles;
  * {@link ome.model.meta.Experimenter}, respectively.
  * 
  * @author <br>
- *         Josh Moore &nbsp;&nbsp;&nbsp;&nbsp; <a
- *         href="mailto:josh.moore@gmx.de"> josh.moore@gmx.de</a>
+ *         Josh Moore &nbsp;&nbsp;&nbsp;&nbsp;
+ *         <a href="mailto:josh.moore@gmx.de"> josh.moore@gmx.de</a>
  * @since OME3.0
  */
 public interface IAdmin extends ServiceInterface {

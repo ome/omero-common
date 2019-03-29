@@ -1,6 +1,4 @@
 /*
- * ome.api.IPixels
- *
  *   Copyright 2006 University of Dundee. All rights reserved.
  *   Use is subject to license terms supplied in LICENSE.txt
  */
@@ -24,17 +22,17 @@ import ome.model.stats.StatsInfo;
  * needs as well as Pixels services to a client. It also allows the rendering 
  * engine to also be run external to the server (e.g. client-side).
  * 
- * @author Jean-Marie Burel &nbsp;&nbsp;&nbsp;&nbsp; <a
- *         href="mailto:j.burel@dundee.ac.uk">j.burel@dundee.ac.uk</a>
+ * @author Jean-Marie Burel &nbsp;&nbsp;&nbsp;&nbsp;
+ *         <a href="mailto:j.burel@dundee.ac.uk">j.burel@dundee.ac.uk</a>
  * @author <br>
- *         Andrea Falconi &nbsp;&nbsp;&nbsp;&nbsp; <a
- *         href="mailto:a.falconi@dundee.ac.uk">a.falconi@dundee.ac.uk</a>
+ *         Andrea Falconi &nbsp;&nbsp;&nbsp;&nbsp;
+ *         <a href="mailto:a.falconi@dundee.ac.uk">a.falconi@dundee.ac.uk</a>
  * @author <br>
- *         Josh Moore &nbsp;&nbsp;&nbsp;&nbsp; <a
- *         href="mailto:josh.moore@gmx.de">josh.moore@gmx.de</a>
+ *         Josh Moore &nbsp;&nbsp;&nbsp;&nbsp;
+ *         <a href="mailto:josh.moore@gmx.de">josh.moore@gmx.de</a>
  * @author <br>
- *         Chris Allan &nbsp;&nbsp;&nbsp;&nbsp; <a
- *         href="mailto:callan@blackcat.ca">callan@blackcat.ca</a>
+ *         Chris Allan &nbsp;&nbsp;&nbsp;&nbsp;
+ *         <a href="mailto:callan@blackcat.ca">callan@blackcat.ca</a>
  * @version 3.0
  * @since OME2.2
  */

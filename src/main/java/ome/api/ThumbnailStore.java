@@ -1,6 +1,4 @@
 /*
- *   $Id$
- *
  *   Copyright 2006 University of Dundee. All rights reserved.
  *   Use is subject to license terms supplied in LICENSE.txt
  */
@@ -24,8 +22,8 @@ import ome.annotations.Validate;
  * </ol>
  * </p>
  * 
- * @author Chris Allan &nbsp;&nbsp;&nbsp;&nbsp; <a
- *         href="mailto:callan@blackcat.ca">callan@blackcat.ca</a>
+ * @author Chris Allan &nbsp;&nbsp;&nbsp;&nbsp;
+ *         <a href="mailto:callan@blackcat.ca">callan@blackcat.ca</a>
  * @version 3.0
  * @since 3.0
  */

@@ -33,7 +33,7 @@ import com.google.common.io.Files;
  * Abstract skeleton class implementing {@link ChecksumProvider} and providing
  * implementations of the interface methods using a universal checksum class
  * object. Classes extending this class shall pass in a concrete checksum
- * algorithm implementation (a {@link HashFunction} instance) as the constructor
+ * algorithm implementation (a @see HashFunction instance) as the constructor
  * parameter.
  *
  * @author Blazej Pindelski, bpindelski at dundee.ac.uk
@@ -52,7 +52,7 @@ public class AbstractChecksumProvider implements ChecksumProvider {
     private Optional<String> hashString = Optional.absent();
 
     /**
-     * Protected ctor. There should not be an instance of this class.
+     * Protected constructor. There should not be an instance of this class.
      * @param hashFunction
      */
     protected AbstractChecksumProvider(HashFunction hashFunction) {
