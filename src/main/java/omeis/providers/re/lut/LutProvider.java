@@ -29,7 +29,7 @@ import ome.model.display.ChannelBinding;
 
 /**
  * Interface for lookup table providers.
- * @author Chris Allan <callan@glencoesoftware.com>
+ * @author Chris Allan callan@glencoesoftware.com
  * @since 5.4.1
  */
 public interface LutProvider extends ServiceInterface {
