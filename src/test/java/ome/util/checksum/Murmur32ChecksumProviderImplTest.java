@@ -36,9 +36,9 @@ public class Murmur32ChecksumProviderImplTest
     public void setUp() {
         map.put(ChecksumTestVector.ABC, "fa93ddb3");
         map.put(ChecksumTestVector.EMPTYARRAY, "00000000");
-        map.put(ChecksumTestVector.SMALLFILE, "6616ab37");
-        map.put(ChecksumTestVector.MEDIUMFILE, "9504d0ed");
-        map.put(ChecksumTestVector.BIGFILE, "f383fd6d");
+        map.put(ChecksumTestVector.SMALLFILE, "f87d658b");
+        map.put(ChecksumTestVector.MEDIUMFILE, "1c9036cf");
+        map.put(ChecksumTestVector.BIGFILE, "f9c16f3b");
     }
 
     public Murmur32ChecksumProviderImplTest() {

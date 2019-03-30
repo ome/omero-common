@@ -20,11 +20,12 @@
 package ome.util.checksum;
 
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.Writer;
+import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.EnumMap;
 
-import org.springframework.util.ResourceUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -49,10 +50,31 @@ public abstract class AbstractChecksumProviderAlgorithmTest {
     public AbstractChecksumProviderAlgorithmTest(ChecksumProvider cp,
             EnumMap<ChecksumTestVector, String> checksumValues) {
         try {
-            this.smallFile = ResourceUtils.getFile("classpath:test.jpg");
-            this.mediumFile = ResourceUtils.getFile("classpath:tinyTest.d3d.dv");
-            this.bigFile = ResourceUtils.getFile("classpath:test.bmp");
-        } catch (FileNotFoundException e) {
+            String name = "smallFile.fake";
+            this.smallFile = new File(System.getProperty("java.io.tmpdir"), name);
+            this.smallFile.deleteOnExit();
+            try (final Writer out = new FileWriter(this.smallFile)) {
+                for (int index = 0; index < 10; index ++) {
+                    out.append("fake" + index);
+                }
+            }
+            name = "mediumFile.fake";
+            this.mediumFile = new File(System.getProperty("java.io.tmpdir"), name);
+            this.mediumFile.deleteOnExit();
+            try (final Writer out = new FileWriter(this.mediumFile)) {
+                for (int index = 0; index < 100; index ++) {
+                    out.append("fake" + index);
+                }
+            }
+            name = "bigFile.fake";
+            this.bigFile = new File(System.getProperty("java.io.tmpdir"), name);
+            this.bigFile.deleteOnExit();
+            try (final Writer out = new FileWriter(this.bigFile)) {
+                for (int index = 0; index < 1000; index ++) {
+                    out.append("fake" + index);
+                }
+            }
+        } catch (IOException e) {
             throw new RuntimeException("IOException during test set up.");
         }
         this.checksumProvider = cp;
