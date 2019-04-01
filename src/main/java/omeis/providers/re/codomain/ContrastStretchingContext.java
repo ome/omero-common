@@ -1,6 +1,4 @@
 /*
- * omeis.providers.re.codomain.ContrastStretchingContext
- *
  *   Copyright 2006 University of Dundee. All rights reserved.
  *   Use is subject to license terms supplied in LICENSE.txt
  */
@@ -15,11 +13,11 @@ package omeis.providers.re.codomain;
  * (xStart, yStart) and (xEnd, yEnd). The third one between (xEnd, yEnd) and
  * (intervalEnd, intervalEnd).
  * 
- * @author Jean-Marie Burel &nbsp;&nbsp;&nbsp;&nbsp; <a
- *         href="mailto:j.burel@dundee.ac.uk">j.burel@dundee.ac.uk</a>
+ * @author Jean-Marie Burel &nbsp;&nbsp;&nbsp;&nbsp;
+ *         <a href="mailto:j.burel@dundee.ac.uk">j.burel@dundee.ac.uk</a>
  * @author <br>
- *         Andrea Falconi &nbsp;&nbsp;&nbsp;&nbsp; <a
- *         href="mailto:a.falconi@dundee.ac.uk"> a.falconi@dundee.ac.uk</a>
+ *         Andrea Falconi &nbsp;&nbsp;&nbsp;&nbsp;
+ *         <a href="mailto:a.falconi@dundee.ac.uk"> a.falconi@dundee.ac.uk</a>
  * @version 2.2
  * @since OME2.2
  */

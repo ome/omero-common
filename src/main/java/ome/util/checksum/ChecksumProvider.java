@@ -29,7 +29,7 @@ import java.nio.ByteBuffer;
  * make sure calls to {@link ChecksumProvider#putFile(String)} are not intermixed
  * with <code>putBytes()</code>. This object can only return a checksum for
  * a file or byte structure, never both.
- * <br/>
+ * <br>
  * Inside the <code>ome.util.checksum</code> package, the term <i>checksum</i>
  * is understood as an "umbrella" term covering checksums, message digests and
  * hashes.

@@ -1,6 +1,4 @@
 /*
- * ome.api.IRenderingSettings
- *
  *   Copyright 2006 University of Dundee. All rights reserved.
  *   Use is subject to license terms supplied in LICENSE.txt
  */
@@ -22,8 +20,8 @@ import ome.model.display.RenderingDef;
  * All methods will receive the id of the pixels set to copy the rendering
  * settings from.
  * 
- * @author Chris Allan &nbsp;&nbsp;&nbsp;&nbsp; <a
- *         href="mailto:callan@blackcat.ca">callan@blackcat.ca</a>
+ * @author Chris Allan &nbsp;&nbsp;&nbsp;&nbsp;
+ *         <a href="mailto:callan@blackcat.ca">callan@blackcat.ca</a>
  * @version 3.0
  * @since 3.0
  */

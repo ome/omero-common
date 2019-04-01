@@ -547,7 +547,7 @@ public interface Search extends ome.api.StatefulServiceInterface,
      * 
      * Calling this method overrides a previous setting of {@link #and()} or
      * {@link #not()}. If there is no active queries (i.e.
-     * {@link #activeQueries()} > 0), then an {@link ApiUsageException} will be
+     * {@link #activeQueries()} greater than 0), then an {@link ApiUsageException} will be
      * thrown.
      */
     void or();
@@ -571,7 +571,7 @@ public interface Search extends ome.api.StatefulServiceInterface,
      * <p>
      * Calling this method overrides a previous setting of {@link #or()} or
      * {@link #not()}. If there is no active queries (i.e.
-     * {@link #activeQueries()} > 0), then an {@link ApiUsageException} will be
+     * {@link #activeQueries()} greater than 0), then an {@link ApiUsageException} will be
      * thrown.
      * </p>
      */
@@ -595,7 +595,7 @@ public interface Search extends ome.api.StatefulServiceInterface,
      * <p>
      * Calling this method overrides a previous setting of {@link #or()} or
      * {@link #and()}. If there is no active queries (i.e.
-     * {@link #activeQueries()} > 0), then an {@link ApiUsageException} will be
+     * {@link #activeQueries()} greater than 0), then an {@link ApiUsageException} will be
      * thrown.
      * </p>
      */

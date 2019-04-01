@@ -54,7 +54,7 @@ public class Paths {
     /**
      * 
      * @param data
-     *            List of the form List<Map<String,Long>> where the keys of
+     *            List of the form {@code List<Map<String,Long>>} where the keys of
      *            the map are "cg", "c", and "i". Data of this form can be
      *            retrieved from {@link OMEData#get(String)} with the string
      *            "CGCPaths.all" TODO

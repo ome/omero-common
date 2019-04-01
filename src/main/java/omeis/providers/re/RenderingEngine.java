@@ -45,11 +45,11 @@ import omeis.providers.re.data.PlaneDef;
  * </p>
  * 
  * 
- * @author Jean-Marie Burel &nbsp;&nbsp;&nbsp;&nbsp; <a
- *         href="mailto:j.burel@dundee.ac.uk">j.burel@dundee.ac.uk</a>
+ * @author Jean-Marie Burel &nbsp;&nbsp;&nbsp;&nbsp;
+ *         <a href="mailto:j.burel@dundee.ac.uk">j.burel@dundee.ac.uk</a>
  * @author <br>
- *         Andrea Falconi &nbsp;&nbsp;&nbsp;&nbsp; <a
- *         href="mailto:a.falconi@dundee.ac.uk"> a.falconi@dundee.ac.uk</a>
+ *         Andrea Falconi &nbsp;&nbsp;&nbsp;&nbsp;
+ *         <a href="mailto:a.falconi@dundee.ac.uk"> a.falconi@dundee.ac.uk</a>
  * @version 2.2
  * @since OME2.2
  */
@@ -126,7 +126,7 @@ public interface RenderingEngine extends StatefulServiceInterface {
      *   <li><code>timepoint</code> is out of range</li>
      *   <li><code>start</code> is out of range</li>
      *   <li><code>end</code> is out of range</li>
-     *   <li><code>start > end</code></li>
+     *   <li><code>start</code> is greater than <code>end</code></li>
      * </ul>
      * @see ome.api.IProjection#projectPixels(long, PixelsType, int, int, int, List, int, int, int, String)
      */
@@ -155,7 +155,7 @@ public interface RenderingEngine extends StatefulServiceInterface {
      *   <li><code>timepoint</code> is out of range</li>
      *   <li><code>start</code> is out of range</li>
      *   <li><code>end</code> is out of range</li>
-     *   <li><code>start > end</code></li>
+     *   <li><code>start</code> is greater than <code>end</code></li>
      * </ul>
      * @see ome.api.IProjection#projectPixels(long, PixelsType, int, int, int, List, int, int, int, String)
      */

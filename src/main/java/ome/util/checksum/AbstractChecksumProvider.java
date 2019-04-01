@@ -52,7 +52,7 @@ public class AbstractChecksumProvider implements ChecksumProvider {
     private Optional<String> hashString = Optional.absent();
 
     /**
-     * Protected ctor. There should not be an instance of this class.
+     * Protected constructor. There should not be an instance of this class.
      * @param hashFunction
      */
     protected AbstractChecksumProvider(HashFunction hashFunction) {

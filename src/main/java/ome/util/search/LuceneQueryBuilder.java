@@ -41,12 +41,12 @@ import java.util.regex.Pattern;
  * description:c) AND (name:d description:d)) <br>
  * <br>
  * 
- * @author Dominik Lindner &nbsp;&nbsp;&nbsp;&nbsp; <a
- *         href="mailto:d.lindner@dundee.ac.uk">d.lindner@dundee.ac.uk</a>
+ * @author Dominik Lindner &nbsp;&nbsp;&nbsp;&nbsp;
+ *         <a href="mailto:d.lindner@dundee.ac.uk">d.lindner@dundee.ac.uk</a>
  * 
  * @since 5.0
  * 
- * TODO: For versions > 5.0 this class can be moved from commons to the server
+ * TODO: For versions greater than 5.0 this class can be moved from commons to the server
  */
 public class LuceneQueryBuilder {
 

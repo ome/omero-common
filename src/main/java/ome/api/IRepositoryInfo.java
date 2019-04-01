@@ -23,8 +23,8 @@ import ome.conditions.InternalException;
  * Use is subject to license terms supplied in LICENSE.txt 
  * </p>
  *
- * @author David L. Whitehurst &nbsp;&nbsp;&nbsp;&nbsp; <a
- *         href="mailto:david@glencoesoftware.com">david@glencoesoftware.com</a>
+ * @author David L. Whitehurst &nbsp;&nbsp;&nbsp;&nbsp;
+ *         <a href="mailto:david@glencoesoftware.com">david@glencoesoftware.com</a>
  * @version $Revision$
  * @since 3.0
  */

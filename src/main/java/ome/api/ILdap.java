@@ -1,6 +1,4 @@
 /*
- * ome.api.ILdap
- *
  *   Copyright 2006 - 2014 University of Dundee. All rights reserved.
  *   Use is subject to license terms supplied in LICENSE.txt
  */
@@ -24,8 +22,8 @@ import ome.model.meta.ExperimenterGroup;
  * {@link ome.model.meta.Experimenter}, respectively.
  *
  * @author <br>
- *         Josh Moore &nbsp;&nbsp;&nbsp;&nbsp; <a
- *         href="mailto:josh.moore@gmx.de"> josh.moore@gmx.de</a>
+ *         Josh Moore &nbsp;&nbsp;&nbsp;&nbsp;
+ *         <a href="mailto:josh.moore@gmx.de"> josh.moore@gmx.de</a>
  * @since OME3.0
  */
 public interface ILdap extends ServiceInterface {

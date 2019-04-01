@@ -83,11 +83,11 @@ import ome.parameters.Parameters;
  * the userGroupId for the newly created objects. TODO umask.
  * </p>
  * 
- * @author Jean-Marie Burel &nbsp;&nbsp;&nbsp;&nbsp; <a
- *         href="mailto:j.burel@dundee.ac.uk">j.burel@dundee.ac.uk</a>
+ * @author Jean-Marie Burel &nbsp;&nbsp;&nbsp;&nbsp;
+ *         <a href="mailto:j.burel@dundee.ac.uk">j.burel@dundee.ac.uk</a>
  * @author <br>
- *         Josh Moore &nbsp;&nbsp;&nbsp;&nbsp; <a
- *         href="mailto:josh.moore@gmx.de"> josh.moore@gmx.de</a>
+ *         Josh Moore &nbsp;&nbsp;&nbsp;&nbsp;
+ *         <a href="mailto:josh.moore@gmx.de"> josh.moore@gmx.de</a>
  * @version 1.0
  * @since OME1.0
  * TODO possibly move optionBuilder to the common code. ome.common.utils
@@ -400,8 +400,8 @@ public interface IContainer extends ServiceInterface {
      * <p>
      * To link or unlink objects to the specified object, we should call the
      * methods link or unlink. TODO Or do we use for example
-     * dataset.setProjects(set of projects) to add. Tink has to be set as
-     * follows dataset->project and project->dataset.
+     * dataset.setProjects(set of projects) to add. Link has to be set as
+     * follows dataset to project and project to dataset.
      * 
      * Alternatively, you can make sure that the collection is <b>exactly</b>
      * how it should be in the database. If you can't guarantee this, it's best

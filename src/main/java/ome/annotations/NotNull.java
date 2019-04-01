@@ -1,6 +1,4 @@
 /*
- * ome.annotations.Validate
- *
  *   Copyright 2006 University of Dundee. All rights reserved.
  *   Use is subject to license terms supplied in LICENSE.txt
  */
@@ -14,8 +12,8 @@ import java.lang.annotation.Target;
 /**
  * annotation used for determining the types of a Set
  * 
- * @author Josh Moore &nbsp;&nbsp;&nbsp;&nbsp; <a
- *         href="mailto:josh.moore@gmx.de">josh.moore@gmx.de</a>
+ * @author Josh Moore &nbsp;&nbsp;&nbsp;&nbsp;
+ *         <a href="mailto:josh.moore@gmx.de">josh.moore@gmx.de</a>
  * @version 1.0
  * @since 1.0
  */
