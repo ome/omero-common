@@ -1,13 +1,10 @@
 /*
- *   $Id$
- *
  *   Copyright 2007 Glencoe Software, Inc. All rights reserved.
  *   Use is subject to license terms supplied in LICENSE.txt
  */
 package ome.system.utests;
 
 import junit.framework.TestCase;
-import ome.system.OmeroContext;
 import ome.system.UpgradeCheck;
 
 import org.testng.annotations.Test;
@@ -18,9 +15,7 @@ import org.testng.annotations.Test;
  */
 public class UpgradeCheckTest extends TestCase {
 
-    OmeroContext ctx = new OmeroContext(new String[]{"classpath:ome/config.xml"});
-    String url = ctx.getProperty("omero.upgrades.url");
-    String version = ctx.getProperty("omero.version");
+    String version =  "1.2.3";
     ome.system.UpgradeCheck check;
 
     @Test
@@ -103,7 +98,7 @@ public class UpgradeCheckTest extends TestCase {
     }
 
     @Test
-    public void testBadUrl4() throws Exception {
+    public void testBadUrl4() {
         check = new UpgradeCheck("abc://bar", "XYZ" + version, "test");
         check.run();
         assertFalse(check.isUpgradeNeeded());

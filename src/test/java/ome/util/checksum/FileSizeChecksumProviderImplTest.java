@@ -42,9 +42,9 @@ public class FileSizeChecksumProviderImplTest
     public void setUp() {
         map.put(ChecksumTestVector.ABC, "0300000000000000");
         map.put(ChecksumTestVector.EMPTYARRAY, "0000000000000000");
-        map.put(ChecksumTestVector.SMALLFILE, "5e20000000000000");
-        map.put(ChecksumTestVector.MEDIUMFILE, "c075000000000000");
-        map.put(ChecksumTestVector.BIGFILE, "3600040000000000");
+        map.put(ChecksumTestVector.SMALLFILE, "3200000000000000");
+        map.put(ChecksumTestVector.MEDIUMFILE, "4e02000000000000");
+        map.put(ChecksumTestVector.BIGFILE, "ea1a000000000000");
     }
 
     public FileSizeChecksumProviderImplTest() {
