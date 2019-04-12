@@ -45,6 +45,10 @@
             <list>
                 <!-- Note: later properties overwrite earlier ones -->
                 <value>hibernate.properties</value>
+                <value>omero-model.properties</value>
+                <value>omero-common.properties</value>
+                <value>omero-server.properties</value>
+                <value>omero-blitz.properties</value>
                 <value>omero.properties</value>
                 <!-- As of ticket:800 (vers. 4.0) these values are static
                      and are compiled into the finished binaries. All other configuration
