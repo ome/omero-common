@@ -12,7 +12,7 @@ The compilation, testing, launch, and delivery of the application are
 automated by means of a Gradle (https://gradle.org/) build file.
 In order to perform a build, all you need is
 a JDK -- version 1.8 or later.
-Clone this Github repository `git clone https://github.com/ome/omero-common.git`.
+Clone this GitHub repository `git clone https://github.com/ome/omero-common.git`.
 In the omero-model directory enter:
 
   gradle build
