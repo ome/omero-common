@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/ome/omero-common.png)](https://travis-ci.org/ome/omero-common)
+
+
 # omero-common
 
 A Gradle project
