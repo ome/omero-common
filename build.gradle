@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "org.openmicroscopy"
-version = "5.5.1-SNAPSHOT"
+version = "5.5.1"
 
 repositories {
     mavenLocal()
@@ -22,7 +22,7 @@ dependencies {
     testImplementation("jmock:jmock:1.+")
     testImplementation("com.jamonapi:jamon:2.81")
 
-    api("org.openmicroscopy:omero-model:5.5.0")
+    api("org.openmicroscopy:omero-model:5.5.1")
     implementation("com.codahale.metrics:metrics-graphite:3.0.2")
     implementation("com.codahale.metrics:metrics-jvm:3.0.2")
     implementation("com.codahale.metrics:metrics-logback:3.0.2")
