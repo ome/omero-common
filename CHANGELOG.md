@@ -1,4 +1,4 @@
-5.5.2 (Jule 2019)
+5.5.2 (July 2019)
 -----------------
 
 - Bump omero-model version.
