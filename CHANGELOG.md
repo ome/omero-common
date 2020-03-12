@@ -1,3 +1,10 @@
+5.5.5 (March 2020)
+------------------
+
+- Display unit test output instead of caching it
+  ([#23](https://github.com/ome/omero-common/pull/23))
+- Bump omero-model version to 5.5.5
+
 5.5.4 (February 2020)
 ---------------------
 
