@@ -26,11 +26,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import junit.framework.TestCase;
 
-public class LuceneQueryBuilderTest extends TestCase{
+public class LuceneQueryBuilderTest {
 
     SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");
     
@@ -174,7 +174,7 @@ public class LuceneQueryBuilderTest extends TestCase{
         checkQuery(fields, raw, expected);
         
         // date search
-        // Note: Lucence date range's "to" is exclusive, so there has to be an extra day added to it
+        // Note: Lucene date range's "to" is exclusive, so there has to be an extra day added to it
         Date from = df.parse("20140701");
         Date to = df.parse("20140702");
         String dateType = LuceneQueryBuilder.DATE_ACQUISITION;
@@ -208,11 +208,11 @@ public class LuceneQueryBuilderTest extends TestCase{
     
     private void checkQuery(List<String> fields, String raw, String expected) throws InvalidQueryException {
         String processed = LuceneQueryBuilder.buildLuceneQuery(fields, raw);
-        assertEquals("Failed on query: "+raw, expected, processed);
+        Assert.assertEquals(expected, processed, "Failed on query: "+raw);
     }
     
     private void checkQuery(List<String> fields, Date from, Date to, String dateType, String raw, String expected) throws InvalidQueryException {
         String processed = LuceneQueryBuilder.buildLuceneQuery(fields, from, to, dateType, raw);
-        assertEquals("Failed on query: "+raw, expected, processed);
+        Assert.assertEquals(expected, processed, "Failed on query: "+raw);
     }
 }
