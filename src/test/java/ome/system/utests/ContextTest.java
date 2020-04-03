@@ -11,8 +11,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import junit.framework.TestCase;
-
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.ConstructorArgumentValues;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
@@ -24,11 +22,12 @@ import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.support.StaticApplicationContext;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import ome.system.OmeroContext;
 
-public class ContextTest extends TestCase {
+public class ContextTest {
 
     public final static String C = "collector";
 
@@ -44,9 +43,9 @@ public class ContextTest extends TestCase {
         OmeroContext c1 = OmeroContext.getClientContext(p);
         OmeroContext c2 = OmeroContext.getClientContext(p);
         OmeroContext c3 = OmeroContext.getClientContext(new Properties());
-        assertTrue(c1 != c2);
-        assertTrue(c1 != c3);
-        assertTrue(c2 != c3);
+        Assert.assertTrue(c1 != c2);
+        Assert.assertTrue(c1 != c3);
+        Assert.assertTrue(c2 != c3);
     }
 
     @Test
@@ -89,13 +88,13 @@ public class ContextTest extends TestCase {
         parent.addBeanFactoryPostProcessor(ppc);
         parent.refresh();
         parent.publishEvent(new ContextRefreshedEvent(parent));
-        assertTrue(c.parentRefreshed);
+        Assert.assertTrue(c.parentRefreshed);
 
         // Ok that worked now moving on.
         c.reset();
         // and see if reset works
-        assertFalse(c.parentRefreshed);
-        assertFalse(c.childRefreshed);
+        Assert.assertFalse(c.parentRefreshed);
+        Assert.assertFalse(c.childRefreshed);
 
         // our child who depends on the PropertyPlaceholders in the parent
         StaticApplicationContext child = new StaticApplicationContext(parent);
@@ -107,8 +106,8 @@ public class ContextTest extends TestCase {
         child.registerBeanDefinition("string", new RootBeanDefinition(
                 String.class, stringArgs, null));
         child.refresh();
-        assertTrue(c.childRefreshed);
-        assertFalse(c.parentRefreshed);
+        Assert.assertTrue(c.childRefreshed);
+        Assert.assertFalse(c.parentRefreshed);
 
         // ignoring for the moment
         // assertTrue( (String) child.getBean("string"), BAR.equals(
@@ -125,19 +124,19 @@ public class ContextTest extends TestCase {
         Collector c = (Collector) map.get(ContextTest.C);
         // initial test
         c.reset();
-        assertFalse(c.childRefreshed);
-        assertFalse(c.parentRefreshed);
+        Assert.assertFalse(c.childRefreshed);
+        Assert.assertFalse(c.parentRefreshed);
         // test refresh()
         ctx.refresh();
-        assertTrue(c.childRefreshed);
-        assertFalse(c.parentRefreshed);
+        Assert.assertTrue(c.childRefreshed);
+        Assert.assertFalse(c.parentRefreshed);
         // test refreshAll
         c.reset();
         ctx.refreshAll();
         map = (Map) ctx.getBean("map"); // have to re-get the collector
         c = (Collector) map.get(ContextTest.C); // since a new one was created.
-        assertTrue(c.childRefreshed); // on parent refresh.
-        assertTrue(c.parentRefreshed);
+        Assert.assertTrue(c.childRefreshed); // on parent refresh.
+        Assert.assertTrue(c.parentRefreshed);
     }
 
 }

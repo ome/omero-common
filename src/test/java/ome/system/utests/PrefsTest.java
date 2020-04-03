@@ -8,18 +8,18 @@ package ome.system.utests;
 
 import java.util.Properties;
 
-import junit.framework.TestCase;
 import ome.system.PreferenceContext;
 
 import org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.annotations.Ignore;
 
 @Test(groups = "ticket:800")
-public class PrefsTest extends TestCase {
+public class PrefsTest {
 
     public final static String testDefault = "test_default";
 
@@ -30,7 +30,7 @@ public class PrefsTest extends TestCase {
     public void testSimple() {
         ctx = new PreferenceContext();
         System.setProperty("test", "ok"); // ticket:2214
-        assertEquals("ok", ctx.getProperty("test"));
+        Assert.assertEquals(ctx.getProperty("test"), "ok");
     }
 
     // Locals
@@ -48,7 +48,7 @@ public class PrefsTest extends TestCase {
         ctx = new PreferenceContext();
         ctx.setProperties(p);
 
-        assertEquals("false", ctx.getProperty(key));
+        Assert.assertEquals(ctx.getProperty(key), "false");
     }
 
     @Test
@@ -65,7 +65,7 @@ public class PrefsTest extends TestCase {
         ctx.setLocations(new Resource[] { new ClassPathResource(
                 "ome/system/utests/Prefs.properties") });
 
-        assertEquals("true", ctx.getProperty(key));
+        Assert.assertEquals(ctx.getProperty(key), "true");
 
     }
 
@@ -89,7 +89,7 @@ public class PrefsTest extends TestCase {
         ctx.setLocations(new Resource[] { new ClassPathResource(
                 "ome/system/utests/Prefs.properties") });
 
-        assertEquals("true", ctx.getProperty(key));
+        Assert.assertEquals(ctx.getProperty(key), "true");
 
     }
 
@@ -107,8 +107,8 @@ public class PrefsTest extends TestCase {
         ctx = new PreferenceContext();
         ctx.setLocation(new ClassPathResource("omero.properties"));
         String v = ctx.getProperty("omero.version");
-        assertNotNull(v);
-        assertTrue(v.length() > 0);
+        Assert.assertNotNull(v);
+        Assert.assertTrue(v.length() > 0);
     }
 
 }

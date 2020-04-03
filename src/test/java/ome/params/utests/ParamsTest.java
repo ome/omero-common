@@ -8,19 +8,19 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-import junit.framework.TestCase;
 import ome.parameters.Filter;
 import ome.parameters.Options;
 import ome.parameters.Parameters;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ParamsTest extends TestCase {
+public class ParamsTest {
 
     @Test
     public void test_ParamsWithFilter() throws Exception {
         Parameters p = new Parameters(new Filter().unique());
-        assertTrue(p.isUnique());
+        Assert.assertTrue(p.isUnique());
     }
 
     @Test
@@ -28,7 +28,7 @@ public class ParamsTest extends TestCase {
         Parameters p = new Parameters();
         p.addBoolean("TEST", Boolean.TRUE);
         Parameters p2 = new Parameters(p);
-        assertTrue(p2.keySet().contains("TEST"));
+        Assert.assertTrue(p2.keySet().contains("TEST"));
     }
 
     @Test

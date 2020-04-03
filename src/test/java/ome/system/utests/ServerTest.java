@@ -6,14 +6,13 @@
  */
 package ome.system.utests;
 
+import org.testng.Assert;
 import org.testng.annotations.*;
 import java.util.Properties;
 import ome.conditions.ApiUsageException;
 import ome.system.Server;
 
-import junit.framework.TestCase;
-
-public class ServerTest extends TestCase {
+public class ServerTest {
 
     @Test(expectedExceptions = ApiUsageException.class)
     public void test_null_host()  {
@@ -29,30 +28,30 @@ public class ServerTest extends TestCase {
     public void test_asProperties() {
         Server s = new Server("a");
         Properties p = s.asProperties();
-        assertNotNull(p.getProperty(Server.OMERO_HOST));
-        assertNotNull(p.getProperty(Server.OMERO_PORT));
-        assertEquals(p.getProperty(Server.OMERO_HOST), "a");
-        assertEquals(p.getProperty(Server.OMERO_PORT), "1099");
+        Assert.assertNotNull(p.getProperty(Server.OMERO_HOST));
+        Assert.assertNotNull(p.getProperty(Server.OMERO_PORT));
+        Assert.assertEquals(p.getProperty(Server.OMERO_HOST), "a");
+        Assert.assertEquals(p.getProperty(Server.OMERO_PORT), "1099");
     }
 
     @Test
     public void test_asProperties_ext() {
         Server l = new Server("a", 999);
         Properties p = l.asProperties();
-        assertNotNull(p.getProperty(Server.OMERO_HOST));
-        assertNotNull(p.getProperty(Server.OMERO_PORT));
+        Assert.assertNotNull(p.getProperty(Server.OMERO_HOST));
+        Assert.assertNotNull(p.getProperty(Server.OMERO_PORT));
 
-        assertEquals(p.getProperty(Server.OMERO_HOST), "a");
-        assertEquals(p.getProperty(Server.OMERO_PORT), "999");
+        Assert.assertEquals(p.getProperty(Server.OMERO_HOST), "a");
+        Assert.assertEquals(p.getProperty(Server.OMERO_PORT), "999");
     }
 
     @Test
     public void test_getters() {
         Server s = new Server("a");
 
-        assertNotNull(s.getHost());
-        assertEquals(s.getHost(), "a");
-        assertEquals(s.getPort(), 1099);
+        Assert.assertNotNull(s.getHost());
+        Assert.assertEquals(s.getHost(), "a");
+        Assert.assertEquals(s.getPort(), 1099);
 
     }
 
@@ -60,9 +59,9 @@ public class ServerTest extends TestCase {
     public void test_getters_ext() {
         Server s = new Server("a", 999);
 
-        assertNotNull(s.getHost());
-        assertEquals(s.getHost(), "a");
-        assertEquals(s.getPort(), 999);
+        Assert.assertNotNull(s.getHost());
+        Assert.assertEquals(s.getHost(), "a");
+        Assert.assertEquals(s.getPort(), 999);
 
     }
 
