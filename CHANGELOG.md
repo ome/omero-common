@@ -1,3 +1,9 @@
+5.5.6 (July 2020)
+-----------------
+
+- Remove junit dependency ([#25](https://github.com/ome/omero-common/pull/25))
+- Bump omero-model version to 5.6.1
+
 5.5.5 (March 2020)
 ------------------
 
