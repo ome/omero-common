@@ -98,6 +98,21 @@
         <property name="mutable" value="false"/>
         <property name="visibility" value="all"/>
     </bean>
+    <bean class="ome.system.Preference" id="omero.bioformats.version">
+        <property name="db" value="false"/>
+        <property name="mutable" value="false"/>
+        <property name="visibility" value="all"/>
+    </bean>
+    <bean class="ome.system.Preference" id="omero.bioformats.vcs_revision">
+        <property name="db" value="false"/>
+        <property name="mutable" value="false"/>
+        <property name="visibility" value="all"/>
+    </bean>
+    <bean class="ome.system.Preference" id="omero.bioformats.date">
+        <property name="db" value="false"/>
+        <property name="mutable" value="false"/>
+        <property name="visibility" value="all"/>
+    </bean>
     <!--  DATABASE PROPERTIES -->
     <bean class="ome.system.Preference" id="omero.db.authority">
        <property name="db" value="true"/>
