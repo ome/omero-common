@@ -337,4 +337,10 @@ public interface IRenderingSettings extends ServiceInterface {
 	 */
 	void setOriginalSettingsForPixels(@NotNull long pixelsId);
 
+	/**
+	 * Get the minimum and maximum allowed pixel value
+	 * @param pixelId The Id of the <code>Pixels</code> set.
+	 * @return The minimum and maximum as double array
+	 */
+	double[] getPixelMinMax(@NotNull long pixelId);
 }
