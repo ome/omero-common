@@ -1,3 +1,12 @@
+5.5.8 (April 2022)
+------------------
+
+- Make Bio-Formats version metadata visible to all ([#33](https://github.com/ome/omero-common/pull/33))
+- Use maven central ([#31](https://github.com/ome/omero-common/pull/31))
+- Build with Gradle 6 ([#30](https://github.com/ome/omero-common/pull/30))
+- Bump omero-model version to 5.6.4
+
+
 5.5.7 (September 2020)
 ----------------------
 
