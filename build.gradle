@@ -21,7 +21,7 @@ dependencies {
     testImplementation("jmock:jmock:1.+")
     testImplementation("com.jamonapi:jamon:2.81")
 
-    api("org.openmicroscopy:omero-model:5.6.5")
+    api("org.openmicroscopy:omero-model:5.6.7")
     implementation("com.codahale.metrics:metrics-graphite:3.0.2")
     implementation("com.codahale.metrics:metrics-jvm:3.0.2")
     implementation("com.codahale.metrics:metrics-logback:3.0.2")
