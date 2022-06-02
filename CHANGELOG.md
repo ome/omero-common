@@ -1,3 +1,11 @@
+5.5.10 (June 2022)
+------------------
+
+- Set preferences for omero.pixeldata.max_plane_float_override ([#35](https://github.com/ome/omero-common/pull/35))
+- Bump omero-model version to 5.6.7 ([#36](https://github.com/ome/omero-common/pull/36))
+- Bump org.openmicroscopy.project plugin to 5.5.4 ([#36](https://github.com/ome/omero-common/pull/36))
+- Add Gradle publication workflow ([#36](https://github.com/ome/omero-common/pull/36))
+
 5.5.9 (April 2022)
 ------------------
 
