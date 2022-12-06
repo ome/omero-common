@@ -113,6 +113,11 @@
         <property name="mutable" value="false"/>
         <property name="visibility" value="all"/>
     </bean>
+    <bean class="ome.system.Preference" id="omero.server.nodedescriptors">
+        <property name="db" value="false"/>
+        <property name="mutable" value="false"/>
+        <property name="visibility" value="all"/>
+    </bean>
     <!--  DATABASE PROPERTIES -->
     <bean class="ome.system.Preference" id="omero.db.authority">
        <property name="db" value="true"/>
