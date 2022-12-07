@@ -1,5 +1,5 @@
-5.5.11 (December 2022)
-----------------------
+5.6.0 (December 2022)
+---------------------
 
 - Define omero.qa.feedback as a new visible server property ([#38](https://github.com/ome/omero-common/pull/38))
 - Allow omero.server.nodedescriptors to be queried from a client ([#37](https://github.com/ome/omero-common/pull/37))
