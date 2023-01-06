@@ -1,4 +1,5 @@
 task testJar(type: Jar) {
+    archiveClassifier.set("tests")
     from sourceSets.test.output
 }
 
@@ -7,12 +8,12 @@ task testSourceJar(type: Jar) {
     from sourceSets.test.allJava
 }
 
-//publishing {
-//    publications {
-//        mavenTestJava(MavenPublication) {
-//            artifactId "$project.name-test"
-//            artifact testJar
-//            artifact testSourceJar
-//        }
-//    }
-//}
+publishing {
+    publications {
+        mavenTestJava(MavenPublication) {
+            artifactId "$project.name-test"
+            artifact testJar
+            artifact testSourceJar
+        }
+    }
+}
