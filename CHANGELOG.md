@@ -1,3 +1,9 @@
+5.6.1 (March 2022)
+------------------
+
+- Push to releases folder on artifactory ([#41](https://github.com/ome/omero-common/pull/41))
+- Bump omero-model version to 5.6.10
+
 5.6.0 (December 2022)
 ---------------------
 
