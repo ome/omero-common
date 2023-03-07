@@ -1,4 +1,4 @@
-5.6.1 (March 2022)
+5.6.1 (March 2023)
 ------------------
 
 - Push to releases folder on artifactory ([#41](https://github.com/ome/omero-common/pull/41))
