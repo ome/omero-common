@@ -7,6 +7,10 @@ task testSourceJar(type: Jar) {
     from sourceSets.test.allJava
 }
 
+task jar(type: Jar, overwrite: true) {
+    from sourceSets.test.output
+}
+
 publishing {
     publications {
         mavenTestJava(MavenPublication) {
