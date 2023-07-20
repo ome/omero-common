@@ -1,22 +1,3 @@
-task testJar(type: Jar) {
-    from sourceSets.test.output
-}
-
-task testSourceJar(type: Jar) {
-    archiveClassifier.set("sources")
-    from sourceSets.test.allJava
-}
-
 task jar(type: Jar, overwrite: true) {
     from sourceSets.test.output
-}
-
-publishing {
-    publications {
-        mavenTestJava(MavenPublication) {
-            artifactId "$project.name-test"
-            artifact testJar
-            artifact testSourceJar
-        }
-    }
 }
