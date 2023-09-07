@@ -1,3 +1,9 @@
+5.6.3 (September 2023)
+----------------------
+
+- Bump omero-model version to 5.6.12
+- Add top-level Git mailmap
+
 5.6.2 (July 2023)
 ------------------
 
