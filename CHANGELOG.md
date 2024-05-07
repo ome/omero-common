@@ -1,3 +1,9 @@
+5.6.5 (May 2024)
+----------------
+
+- Mark omero.security.ignore_case as production property ([#43](https://github.com/ome/omero-common/pull/43))
+- Bump omero-model version to 5.6.14
+
 5.6.4 (December 2023)
 ---------------------
 
