@@ -1,3 +1,9 @@
+5.6.6 (May 2024)
+----------------
+
+- Fix formating of property ([#44](https://github.com/ome/omero-common/pull/44))
+
+
 5.6.5 (May 2024)
 ----------------
 
