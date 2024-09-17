@@ -1,4 +1,5 @@
 task testJar(type: Jar) {
+    archiveClassifier.set("tests")
     from sourceSets.test.output
 }
 
