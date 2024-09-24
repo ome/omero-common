@@ -122,6 +122,8 @@ public interface RawPixelsStore extends StatefulServiceInterface {
 
     public boolean isFloat();
 
+    public boolean isRGB();
+    
     public byte[] calculateMessageDigest();
 
     public Pixels save();
