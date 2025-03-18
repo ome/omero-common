@@ -1,6 +1,6 @@
 plugins {
     id "java-library"
-    id "org.openmicroscopy.project" version "5.7.0"
+    id "org.openmicroscopy.project" version "5.7.1"
 }
 
 group = "org.openmicroscopy"
