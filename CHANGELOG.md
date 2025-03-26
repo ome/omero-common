@@ -1,3 +1,9 @@
+5.7.2 (March 2025)
+------------------
+
+- Bump omero-model version to 5.7.2
+- Specify Java target using release flag ([#49](https://github.com/ome/omero-common/pull/49))
+
 5.7.1 (March 2025)
 ------------------
 
