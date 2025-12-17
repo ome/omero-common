@@ -44,7 +44,7 @@ class BinaryLutReader
         System.arraycopy(reds, 0, r, 0, nColors);
         System.arraycopy(greens, 0, g, 0, nColors);
         System.arraycopy(blues, 0, b, 0, nColors);
-        double scale = nColors/new Double(SIZE);
+        double scale = nColors/Double.valueOf(SIZE);
         int i1, i2;
         double fraction;
         int v = SIZE-1;

@@ -133,19 +133,19 @@ public class OMEData {
 
     public List getMax(String propertyKey, int maximum) {
         List l = get(propertyKey);
-        return getRandomNumber(l, new Integer(maximum));
+        return getRandomNumber(l, Integer.valueOf(maximum));
 
     }
 
     public List getPercent(String propertyKey, double percent) {
         List l = get(propertyKey);
-        return getRandomNumber(l, new Double(l.size() * percent));
+        return getRandomNumber(l, Double.valueOf(l.size() * percent));
 
     }
 
     public Object getRandom(String propertyKey) {
         List l = get(propertyKey);
-        List result = getRandomNumber(l, new Integer(1));
+        List result = getRandomNumber(l, Integer.valueOf(1));
 
         if (result == null || result.size() < 1) {
             return null;
@@ -209,7 +209,7 @@ public class OMEData {
 
     public int randomChoice(int size) {
         double value = (size - 1) * rnd.nextDouble();
-        return (new Double(value)).intValue();
+        return Double.valueOf(value).intValue();
     }
 
 }
