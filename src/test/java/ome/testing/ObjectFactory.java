@@ -202,7 +202,7 @@ public class ObjectFactory {
         qdef.setCdStart(Integer.valueOf(1));
 
         RenderingDef def = new RenderingDef();
-        def.setDefaultT(nteger.valueOf(1));
+        def.setDefaultT(Integer.valueOf(1));
         def.setDefaultZ(Integer.valueOf(1));
         def.setModel(model);
         def.setPixels(ObjectFactory.createPixelGraph(null));
