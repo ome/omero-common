@@ -130,13 +130,13 @@ public class ObjectFactory {
                 lc[w].setPhotometricInterpretation(pi);
 
                 // Not required but useful
-                si[w].setGlobalMax(new Double(0.0));
-                si[w].setGlobalMin(new Double(0.0));
+                si[w].setGlobalMax(Double.valueOf(0.0));
+                si[w].setGlobalMin(Double.valueOf(0.0));
                 c[w].setLogicalChannel(lc[w]);
                 c[w].setStatsInfo(si[w]);
-                pl[w].setTheC(new Integer(w));
-                pl[w].setTheZ(new Integer(0));
-                pl[w].setTheT(new Integer(0));
+                pl[w].setTheC(Integer.valueOf(w));
+                pl[w].setTheZ(Integer.valueOf(0));
+                pl[w].setTheT(Integer.valueOf(0));
 
                 Time deltaT = new Time(0.0, UnitsTime.SECOND);
                 pl[w].setDeltaT(deltaT);
@@ -150,11 +150,11 @@ public class ObjectFactory {
         }
 
         Length mm1 = new Length(1.0, UnitsLength.MILLIMETER);
-        p.setSizeX(new Integer(1));
-        p.setSizeY(new Integer(1));
-        p.setSizeZ(new Integer(1));
-        p.setSizeC(new Integer(1));
-        p.setSizeT(new Integer(1));
+        p.setSizeX(Integer.valueOf(1));
+        p.setSizeY(Integer.valueOf(1));
+        p.setSizeZ(Integer.valueOf(1));
+        p.setSizeC(Integer.valueOf(1));
+        p.setSizeT(Integer.valueOf(1));
         p.setPhysicalSizeX(mm1);
         p.setPhysicalSizeY(mm1);
         p.setPhysicalSizeZ(mm1);
@@ -178,14 +178,14 @@ public class ObjectFactory {
 
         ChannelBinding binding = new ChannelBinding();
         binding.setActive(Boolean.FALSE);
-        binding.setCoefficient(new Double(1));
-        binding.setAlpha(new Integer(1));
-        binding.setBlue(new Integer(1));
-        binding.setGreen(new Integer(1));
-        binding.setRed(new Integer(1));
+        binding.setCoefficient(Double.valueOf(1));
+        binding.setAlpha(Integer.valueOf(1));
+        binding.setBlue(Integer.valueOf(1));
+        binding.setGreen(Integer.valueOf(1));
+        binding.setRed(Integer.valueOf(1));
         binding.setFamily(family);
-        binding.setInputEnd(new Double(1.0));
-        binding.setInputStart(new Double(1.0));
+        binding.setInputEnd(Double.valueOf(1.0));
+        binding.setInputStart(Double.valueOf(1.0));
         binding.setNoiseReduction(Boolean.FALSE);
 
         return binding;
@@ -197,13 +197,13 @@ public class ObjectFactory {
         model.setValue("rgb");
 
         QuantumDef qdef = new QuantumDef();
-        qdef.setBitResolution(new Integer(1));
-        qdef.setCdEnd(new Integer(1));
-        qdef.setCdStart(new Integer(1));
+        qdef.setBitResolution(Integer.valueOf(1));
+        qdef.setCdEnd(Integer.valueOf(1));
+        qdef.setCdStart(Integer.valueOf(1));
 
         RenderingDef def = new RenderingDef();
-        def.setDefaultT(new Integer(1));
-        def.setDefaultZ(new Integer(1));
+        def.setDefaultT(Integer.valueOf(1));
+        def.setDefaultZ(Integer.valueOf(1));
         def.setModel(model);
         def.setPixels(ObjectFactory.createPixelGraph(null));
         def.setQuantization(qdef);
@@ -214,10 +214,10 @@ public class ObjectFactory {
     public static PlaneSlicingContext createPlaneSlicingContext() {
         PlaneSlicingContext enhancement = new PlaneSlicingContext();
         enhancement.setConstant(Boolean.FALSE);
-        enhancement.setLowerLimit(new Integer(1));
-        enhancement.setPlanePrevious(new Integer(1));
-        enhancement.setPlaneSelected(new Integer(1));
-        enhancement.setUpperLimit(new Integer(1));
+        enhancement.setLowerLimit(Integer.valueOf(1));
+        enhancement.setPlanePrevious(Integer.valueOf(1));
+        enhancement.setPlaneSelected(Integer.valueOf(1));
+        enhancement.setUpperLimit(Integer.valueOf(1));
 
         return enhancement;
 

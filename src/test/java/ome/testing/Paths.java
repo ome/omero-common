@@ -34,17 +34,17 @@ public class Paths {
 
     private static Logger log = LoggerFactory.getLogger(Paths.class);
 
-    public final static Long EXISTS = new Long(-3);
+    public final static Long EXISTS = Long.valueOf(-3);
 
-    public final static Long WILDCARD = new Long(-2);
+    public final static Long WILDCARD = Long.valueOf(-2);
 
-    public final static Long NULL_IMAGE = new Long(-1);
+    public final static Long NULL_IMAGE = Long.valueOf(-1);
 
-    public final static Long CG = new Long(0);
+    public final static Long CG = Long.valueOf(0);
 
-    public final static Long C = new Long(1);
+    public final static Long C = Long.valueOf(1);
 
-    public final static Long I = new Long(2);
+    public final static Long I = Long.valueOf(2);
 
     List cg = new ArrayList(), c = new ArrayList(), i = new ArrayList(),
             removed = new ArrayList();
@@ -73,7 +73,7 @@ public class Paths {
             add(cg, c, i);
 
             if (singlePath == null && i != Paths.NULL_IMAGE) {
-                singlePath = get(new Long(size() - 1));
+                singlePath = get(Long.valueOf(size() - 1));
             }
 
         }
@@ -88,7 +88,7 @@ public class Paths {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (int t = 0; t < cg.size(); t++) {
-            if (!removed.contains(new Long(t))) {
+            if (!removed.contains(Long.valueOf(t))) {
                 sb.append(t + ":\t");
                 sb.append(cg.get(t));
                 sb.append("/");
@@ -128,7 +128,7 @@ public class Paths {
     public Set find(Long testCg, Long testC, Long testI) {
         Set result = new HashSet();
         for (int n = 0; n < cg.size(); n++) {
-            Long N = new Long(n);
+            Long N = Long.valueOf(n);
             if ((cg.get(n).equals(testCg) || testCg == WILDCARD || testCg == EXISTS)
                     && (c.get(n).equals(testC) || testC == WILDCARD || testC == EXISTS)
                     && (i.get(n).equals(testI) || testI == WILDCARD || testI == EXISTS && i
