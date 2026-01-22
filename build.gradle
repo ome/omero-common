@@ -28,9 +28,9 @@ compileJava {
 }
 
 dependencies {
-    testImplementation("org.testng:testng:7.5")
-    testImplementation("jmock:jmock:1.+")
-    testImplementation("com.jamonapi:jamon:2.81")
+    implementation("org.testng:testng:7.5")
+    implementation("jmock:jmock:1.+")
+    implementation("com.jamonapi:jamon:2.81")
 
     api("org.openmicroscopy:omero-model:5.7.3")
     implementation("com.codahale.metrics:metrics-graphite:3.0.2")
