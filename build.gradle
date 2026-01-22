@@ -48,6 +48,3 @@ test {
     }
     dependsOn cleanTest
 }
-
-// Add publish functionality
-apply from: "publish.gradle"
