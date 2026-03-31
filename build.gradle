@@ -30,7 +30,7 @@ compileJava {
 dependencies {
     testImplementation("org.testng:testng:7.5")
 
-    api("org.openmicroscopy:omero-model:5.7.4")
+    api("org.openmicroscopy:omero-model:5.7.5")
     implementation("com.codahale.metrics:metrics-graphite:3.0.2")
     implementation("com.codahale.metrics:metrics-jvm:3.0.2")
     implementation("com.codahale.metrics:metrics-logback:3.0.2")
